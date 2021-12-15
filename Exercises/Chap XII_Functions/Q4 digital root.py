@@ -1,7 +1,7 @@
-def digital_root (n):
-    while dig < 10:
-        dig = []
+def root (n):
+    dig = []
+    while sum (dig) > 10:
         for i in range (len (str (n))):
-            dig.append (int (str(n)[i]))
+            dig.append (int (str (n)[i]))
         print (sum (dig))
-print (digital_root (11111))
+print (root (298383938))
