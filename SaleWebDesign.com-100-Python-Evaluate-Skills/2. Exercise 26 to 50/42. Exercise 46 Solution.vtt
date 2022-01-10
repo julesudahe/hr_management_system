@@ -1,0 +1,105 @@
+WEBVTT
+
+0
+00:02.090 --> 00:08.600
+Hi again! This is the solution to exercise 46 where you are asked to create a script that extracts
+
+1
+00:08.610 --> 00:16.910
+letters from the 26 text files which I have in here in this folder called letters A to Z.
+
+2
+00:17.520 --> 00:29.510
+And so you are asked to put those letters in a list, so the letters contained inside each of the text files.
+
+3
+00:29.550 --> 00:33.820
+This is the solution. I'm using the glob library here.
+
+4
+00:34.080 --> 00:35.700
+That's a standard library.
+
+5
+00:35.700 --> 00:36.990
+You don't need to install it.
+
+6
+00:37.020 --> 00:42.840
+Then I create a letters list here which is empty for now.
+
+7
+00:43.210 --> 00:45.290
+Then I generate a list with glob.glob.
+
+8
+00:45.330 --> 00:50.240
+And the globe method
+
+9
+00:50.400 --> 00:56.990
+will be looking at this pattern, path pattern for file names.
+
+10
+00:57.450 --> 01:01.370
+So it goes to the letters folder and then it gets everything.
+
+11
+01:01.530 --> 01:07.280
+Ends with .txt so it gets the 26 text files.
+
+12
+01:07.640 --> 01:17.700
+These ones in here and then iterate through that list because you know if you print file list
+
+13
+01:21.310 --> 01:27.050
+you'll see that you get all the paths of your files and you iterate through this at list.
+
+14
+01:27.060 --> 01:37.420
+So for let's say letters slash a.txt, you open it write mode as a file and then
+
+15
+01:37.450 --> 01:47.240
+and you say letters, so letters is the list you have created earlier append file.read.
+
+16
+01:47.280 --> 01:54.020
+So with file.read you're going to get the contents of that current file which is letter a
+
+17
+01:55.310 --> 02:02.940
+and the backslash n character which is a break line and so you'd want to strip out that character
+
+18
+02:02.940 --> 02:04.960
+from the content.
+
+19
+02:04.980 --> 02:14.640
+So you end up with only a. And so you append the first letter to the letters list and then the loop goes back
+
+20
+02:14.700 --> 02:15.230
+again.
+
+21
+02:15.360 --> 02:22.730
+It goes to the next file name and does exactly the same thing until it goes to the very last file name.
+
+22
+02:23.270 --> 02:30.600
+The loop stops and Python goes to the next line which is printing out the list letters which was
+
+23
+02:30.600 --> 02:34.030
+constructed in the loop.
+
+24
+02:34.110 --> 02:36.500
+That's quite nice and straightforward.
+
+25
+02:37.000 --> 02:40.430
+I hope it's clear for you and thanks! I'll see you later.

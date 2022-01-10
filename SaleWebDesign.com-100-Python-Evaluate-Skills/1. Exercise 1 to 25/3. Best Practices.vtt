@@ -1,0 +1,257 @@
+WEBVTT
+
+0
+00:01.270 --> 00:05.970
+Hello in this video I'll show you the best practices on how to solve an exercise.
+
+1
+00:05.980 --> 00:14.290
+So in other words I'll pretend I'm a student now and  I'll go ahead and solve the first exercise. So or here on
+
+2
+00:14.290 --> 00:16.860
+the left I have the Udemy interface, and here on the right
+
+3
+00:16.870 --> 00:26.020
+I have opened an empty folder which I named  pyexercises as you in here and I'll be working with Atom editor.
+
+4
+00:26.210 --> 00:29.200
+So you can right click and go to open Atom.
+
+5
+00:32.740 --> 00:38.940
+Once you have opened Atom, then you don't need this folder anymore.
+
+6
+00:38.950 --> 00:46.030
+Actually get close that and you can work on Atom and I'll suggest you create one file for each exercise.
+
+7
+00:46.330 --> 00:53.320
+So for exercise one, I'll go ahead and say one.py. That's the first file and you'll see that
+
+8
+00:53.680 --> 00:56.390
+in the folder now, one file has been created.
+
+9
+00:56.410 --> 01:03.630
+So a Python file and then I'll have 2.py, 3.py up to
+
+10
+01:03.760 --> 01:04.350
+100.py.
+
+11
+01:04.960 --> 01:06.940
+So let's look at the first exercise.
+
+12
+01:11.710 --> 01:11.990
+OK.
+
+13
+01:12.010 --> 01:15.540
+The first thing you need to look at is this bar in here.
+
+14
+01:15.550 --> 01:20.980
+So we have four different levels. We have beginner, we have easy, intermediate, and experienced.
+
+15
+01:21.040 --> 01:26.110
+So this is just to give you an idea of the difficulty level of the current exercise.
+
+16
+01:26.170 --> 01:30.300
+This also the science on how many points an exercise has,
+
+17
+01:30.310 --> 01:32.140
+but I'll go through that later.
+
+18
+01:32.140 --> 01:39.400
+So you always have a question here for each exercise of this one it says let's start with easy things
+
+19
+01:39.400 --> 01:39.640
+first.
+
+20
+01:39.640 --> 01:40.090
+OK.
+
+21
+01:40.330 --> 01:42.450
+What will the following code produce?
+
+22
+01:42.460 --> 01:45.210
+Now as you can see this is quite an easy exercise.
+
+23
+01:46.680 --> 01:50.520
+The first exercises are easy but that gets complex.
+
+24
+01:50.520 --> 01:53.310
+So  you need to be patient.
+
+25
+01:53.350 --> 01:55.020
+This one I prefer to do it mentally.
+
+26
+01:55.020 --> 02:04.230
+I don't want to write that in a Python file, but normally most exercises ask you to write some programs.
+
+27
+02:04.260 --> 02:06.060
+So this is a special exercise.
+
+28
+02:06.180 --> 02:12.080
+This is asking you to say what output this gives and you can't just say  the answer mentally.
+
+29
+02:12.330 --> 02:17.220
+So for this two four six this would be a six.
+
+30
+02:17.220 --> 02:24.850
+So the output for this would be six. Six is my answer. If you need help, then you can follow these arrows.
+
+31
+02:24.870 --> 02:28.350
+They will take you to a hint.
+
+32
+02:28.400 --> 02:34.110
+Which says Python reads and executes scripts from top to bottom which means that a gets a value
+
+33
+02:34.110 --> 02:37.990
+of two first then it gets a value of four and six then six
+
+34
+02:38.020 --> 02:43.230
+is used here and print will print out that last updated value.
+
+35
+02:43.230 --> 02:49.330
+However if you like you can try that code out in the Python terminal.
+
+36
+02:49.530 --> 02:58.640
+That and then you'd open platformio ide terminal. Python 1 tap 6.
+
+37
+02:58.650 --> 03:00.000
+So that's the answer.
+
+38
+03:00.000 --> 03:07.890
+And then you can check your answer against the solution which is always in the next article.
+
+39
+03:07.930 --> 03:11.800
+So this says one point and then you can check the answer.
+
+40
+03:12.070 --> 03:15.690
+Here's the exercise for reference for your convenience.
+
+41
+03:15.850 --> 03:22.600
+I have included here the code for the exercise and the answer is 6 and 6 was my answer so I can note down
+
+42
+03:22.600 --> 03:23.810
+6 points.
+
+43
+03:23.830 --> 03:25.610
+Sorry, 1 point for this one.
+
+44
+03:25.670 --> 03:31.690
+And you can do that using a pen on a paper. I'd prefer a pen and paper, but if you like you can do
+
+45
+03:31.690 --> 03:41.710
+that digitally so you can create a file here. Let's say points.txt. And you say so exercise 1, 1.
+
+46
+03:41.710 --> 03:42.820
+One point.
+
+47
+03:43.420 --> 03:47.020
+So exercise 2, 1 point, exercise 3, 2 points.
+
+48
+03:47.020 --> 03:47.450
+And so on.
+
+49
+03:50.400 --> 03:57.150
+Later you can use Python to make the sum of all your points when you have reached exercise 100.
+
+50
+03:57.610 --> 04:02.970
+And you'd use that total number of points to see what category you fall in.
+
+51
+04:03.130 --> 04:05.080
+So your skill level.
+
+52
+04:05.800 --> 04:07.940
+Yeah, you're going to have an article on that
+
+53
+04:08.050 --> 04:16.580
+at the end of the course. You also have the explanation here if you want to know more about this solution of the
+
+54
+04:16.580 --> 04:17.560
+exercise.
+
+55
+04:17.560 --> 04:23.360
+So sometimes you'll learn new things so you don't ignore them even if you if you feel that you understood
+
+56
+04:23.380 --> 04:29.700
+well the exercise. Often there is something new that you may learn while reading or watching some videos.
+
+57
+04:29.770 --> 04:32.740
+So don't ignore the explanation.
+
+58
+04:32.770 --> 04:35.730
+Yeah, this is about exercise number one.
+
+59
+04:35.730 --> 04:39.440
+And if you click continue you'd go to exercise 2, but I won't do that.
+
+60
+04:39.460 --> 04:42.310
+So I hope this is clear.
+
+61
+04:42.520 --> 04:43.050
+And, yeah.
+
+62
+04:43.210 --> 04:47.090
+Now you can move on to the first exercise of the course.
+
+63
+04:47.260 --> 04:48.660
+I'll talk to you later.

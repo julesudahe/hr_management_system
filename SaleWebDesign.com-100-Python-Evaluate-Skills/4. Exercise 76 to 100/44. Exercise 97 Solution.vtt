@@ -1,0 +1,73 @@
+WEBVTT
+
+0
+00:01.430 --> 00:05.670
+Great, this is the solution to exercise 97.
+
+1
+00:05.900 --> 00:10.940
+So I'm opening the file in append mode.
+
+2
+00:10.940 --> 00:16.330
+Then of course I need a while loop to have the program running all the time.
+
+3
+00:16.430 --> 00:26.280
+I ask the user for input and if that line is equal to save, I close the file, and then I open the file again.
+
+4
+00:27.410 --> 00:33.070
+So I'm closing the file because if you don't close the file the changes will not be written there, so the file
+
+5
+00:33.090 --> 00:41.210
+is still open in Python and you can not see the file content with other programs because you haven't
+
+6
+00:41.300 --> 00:45.530
+saved those changes yet, so close save changes and closes the file.
+
+7
+00:45.800 --> 00:53.240
+However the program is still learning so what you want to do is you want to open the file again because
+
+8
+00:53.240 --> 01:00.170
+that's what the user wanted, so they wanted to save the changes, but not close the program.
+
+9
+01:00.170 --> 01:05.720
+However your solution may be different, but if you're getting the same output as mine then you
+
+10
+01:05.720 --> 01:07.370
+should be good to go.
+
+11
+01:07.700 --> 01:12.750
+And then we're using elif here because we have multiple conditions.
+
+12
+01:12.760 --> 01:18.180
+If line is equal to close, then we close the file and we break the while loop,
+
+13
+01:18.420 --> 01:20.650
+so we close the program.
+
+14
+01:20.710 --> 01:24.090
+Otherwise if the string is not saved and is not closed,
+
+15
+01:24.090 --> 01:27.740
+then we write that string to the file.
+
+16
+01:28.220 --> 01:33.440
+That's more or less about the solution for this exercise.
+
+17
+01:33.470 --> 01:37.070
+This is clear and I'll talk to you later.

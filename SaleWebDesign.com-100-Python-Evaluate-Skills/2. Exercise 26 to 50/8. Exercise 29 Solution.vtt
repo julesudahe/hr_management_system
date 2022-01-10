@@ -1,0 +1,125 @@
+WEBVTT
+
+0
+00:00.510 --> 00:05.120
+Hi everyone! This the solution to exercise 29. For this exercise
+
+1
+00:05.120 --> 00:12.890
+you are asked to write a function that calculates liquid volume taken from these site in here.
+
+2
+00:13.020 --> 00:19.770
+So this was the formula and you were also asked to consider that r is always 10.
+
+3
+00:20.250 --> 00:24.760
+So let's say all of our spheres have a radius of 10.
+
+4
+00:24.780 --> 00:31.640
+So you have to take that into consideration when building your code so that you make it very efficient.
+
+5
+00:32.190 --> 00:35.710
+And if you pass 2 then you'd expect this output.
+
+6
+00:35.730 --> 00:38.820
+OK, this is the solution I came up with.
+
+7
+00:39.060 --> 00:46.550
+I'm importing pi which is a constant. It's somewhere at 3.14.
+
+8
+00:46.590 --> 00:51.370
+You could also find that on the Internet and just type down the number in here.
+
+9
+00:51.770 --> 00:56.160
+But you don't have to do it if you know how to import pi from here.
+
+10
+00:56.160 --> 00:59.000
+And then we have the function down here.
+
+11
+00:59.340 --> 01:01.500
+I'm passing two arguments here.
+
+12
+01:01.500 --> 01:05.690
+A known non-default argument and a default argument.
+
+13
+01:06.120 --> 01:11.090
+So the default argument means when you assign a value to that arguments,
+
+14
+01:11.160 --> 01:19.500
+so when you call the function in here, you only pass one value that's will be replaced with the non-default
+
+15
+01:19.520 --> 01:20.660
+arguments.
+
+16
+01:20.910 --> 01:26.090
+And if you don't pass a value for the default argument 10 will be used.
+
+17
+01:26.100 --> 01:33.660
+But if you want you can pass a value for the default argument as well like 5 and then 5 will be used for
+
+18
+01:33.720 --> 01:34.620
+r everywhere.
+
+19
+01:34.620 --> 01:37.090
+So 5 in power of 3.
+
+20
+01:37.090 --> 01:40.680
+And so on. And yeah, that's about the arguments.
+
+21
+01:40.680 --> 01:42.310
+And here is the formula.
+
+22
+01:45.600 --> 01:47.510
+I think this is self explanatory.
+
+23
+01:47.510 --> 01:49.990
+This is a multiplication multiplication.
+
+24
+01:49.990 --> 01:51.470
+This is a power.
+
+25
+01:51.820 --> 01:54.350
+So exponents and then, yeah
+
+26
+01:54.520 --> 01:56.140
+we have the same things here, division.
+
+27
+01:56.170 --> 02:02.960
+And so on. And then we return V, and then we print the function output.
+
+28
+02:03.070 --> 02:11.790
+So 2 for age and then V will be printed out. That's the output of the function. I hope this is clear.
+
+29
+02:11.800 --> 02:13.060
+And I'll talk to you later.
+
+30
+02:13.060 --> 02:13.480
+Thanks.

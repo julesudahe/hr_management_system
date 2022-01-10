@@ -1,0 +1,73 @@
+WEBVTT
+
+0
+00:01.270 --> 00:04.180
+Hey there! This is the question of exercise
+
+1
+00:04.240 --> 00:05.580
+47.
+
+2
+00:05.860 --> 00:12.670
+And for this exercise I'd like you to write a script that iterates through each of the 26 text
+
+3
+00:12.670 --> 00:14.290
+files.
+
+4
+00:15.100 --> 00:20.230
+So these are the text files that we use in the previous exercises but you can also find them
+
+5
+00:20.340 --> 00:20.800
+attached
+
+6
+00:20.860 --> 00:23.370
+in this article for your convenience.
+
+7
+00:24.030 --> 00:33.060
+And so then the script checks if the letter inside the text file is in string python and then puts
+
+8
+00:33.060 --> 00:39.110
+the letter in a list if the letters is, if the letter is a character of that string.
+
+9
+00:39.390 --> 00:41.720
+So then you print out the list.
+
+10
+00:41.770 --> 00:44.820
+So this is the list.
+
+11
+00:44.950 --> 00:49.800
+So again what we are doing is we're going through these text files.
+
+12
+00:49.850 --> 00:51.640
+We're reading the content.
+
+13
+00:51.670 --> 00:58.630
+So we go to the first file, A we read the content and we check if the contents of the file so if A
+
+14
+00:58.630 --> 01:08.090
+is part of this string and if it is we put a in a new list. If it's not we go to the next file and so on.
+
+15
+01:08.300 --> 01:16.040
+And we were consumed, we have consumed all the 26 files and then we print out the list that we
+
+16
+01:16.110 --> 01:19.330
+constructed. That's the exercise.
+
+17
+01:19.330 --> 01:21.270
+I hope you solve it and I'll talk to you later.

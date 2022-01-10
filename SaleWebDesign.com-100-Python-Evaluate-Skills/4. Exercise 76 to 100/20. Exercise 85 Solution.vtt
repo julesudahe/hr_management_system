@@ -1,0 +1,209 @@
+WEBVTT
+
+0
+00:00.840 --> 00:03.780
+Hello! Here's the solution to exercise 85.
+
+1
+00:03.890 --> 00:12.530
+And here you were asked to create a script that prints the countries_raw.txt file.
+
+2
+00:12.630 --> 00:20.100
+This is supposed to contain a list of countries, but it also has lines such as A, a brake line here.
+
+3
+00:20.100 --> 00:24.200
+Top of Page and so on and so forth.
+
+4
+00:24.210 --> 00:31.560
+And you want to clean, to remove those lines so that you ended up with this clean file of countries only.
+
+5
+00:31.580 --> 00:34.820
+This is how you do it.
+
+6
+00:35.250 --> 00:43.170
+And let me explain the code so I'm reading the countries_raw.txt file and creating a list
+
+7
+00:43.920 --> 00:45.410
+out of that file.
+
+8
+00:45.420 --> 00:53.630
+So a list content. Let me print that out as soon as I create the list here to show you how the list
+
+9
+00:53.660 --> 00:59.470
+looks like. 85.
+
+10
+00:59.580 --> 01:02.890
+So this is the list.
+
+11
+01:03.480 --> 01:12.400
+Here is A, the first line, and then the brake line. And then Afghanistan, Albania, and so on Algeria, and so forth.
+
+12
+01:12.400 --> 01:20.610
+And each of these countries they also have this \n' which is a brake line, a special character
+
+13
+01:21.030 --> 01:23.550
+and you want to remove that as well.
+
+14
+01:23.550 --> 01:30.810
+So what I'm doing here is I'm using these comprehensions to iterate through the items of the list and
+
+15
+01:30.810 --> 01:33.440
+apply things like strip
+
+16
+01:33.540 --> 01:41.610
+in this case, so for the first list comprehension, I'm removing the \n'  characters from all
+
+17
+01:41.610 --> 01:43.090
+the lines.
+
+18
+01:43.250 --> 01:48.690
+So all of them have such a character so it's wise to remove that first.
+
+19
+01:48.690 --> 01:51.100
+So remove those characters for i.
+
+20
+01:51.160 --> 02:00.450
+For i in content if, this is that. It's good to have the comprehension generic.
+
+21
+02:00.480 --> 02:10.600
+So if there is an item without this character we're sure not to get an error to interrupt our script so that
+
+22
+02:11.980 --> 02:18.620
+shall remove the backslash from our list. I can print it out again.
+
+23
+02:18.720 --> 02:23.620
+And you see now that's there are no \n' characters there.
+
+24
+02:23.770 --> 02:24.270
+OK.
+
+25
+02:24.380 --> 02:30.360
+And the next thing I'd do was I used the list comprehension again so I'm building a list.
+
+26
+02:30.530 --> 02:37.630
+I'm saying that's put i in the list for i in content.
+
+27
+02:37.880 --> 02:46.040
+If i is not an empty string. For instance you have this empty string here.
+
+28
+02:46.490 --> 02:50.390
+So what I'm doing is I'm saying put i in a list
+
+29
+02:50.420 --> 02:52.040
+if i is not an empty string.
+
+30
+02:52.340 --> 02:54.870
+Otherwise don't put that in the list.
+
+31
+02:54.920 --> 03:01.190
+So I'm updating the contents list and putting all the items that are not empty strings in there.
+
+32
+03:04.070 --> 03:04.660
+And after that
+
+33
+03:04.660 --> 03:08.920
+what I do is I remove the strings
+
+34
+03:09.020 --> 03:15.120
+Top of Page using the same comprehension as as this one here.
+
+35
+03:15.140 --> 03:18.820
+So it's exactly the same.
+
+36
+03:18.940 --> 03:28.510
+And you can check the intermediate results at this point if you like and you'll see that there are no
+
+37
+03:29.200 --> 03:38.890
+empty strings now, but you still have these letters, so  O P and the countries as well.
+
+38
+03:38.890 --> 03:43.430
+So you want to remove the letters now and leave the countries. So how do you do that?
+
+39
+03:43.430 --> 03:44.240
+Well, the letters
+
+40
+03:44.240 --> 03:47.320
+what specific attribute do they have?
+
+41
+03:47.500 --> 03:49.920
+Well they have a length of one.
+
+42
+03:50.710 --> 03:52.300
+That's what I thought about.
+
+43
+03:52.600 --> 03:58.670
+If your imagination is better than mine you could find some other attributes.
+
+44
+03:58.750 --> 04:00.650
+So this is what I did.
+
+45
+04:01.420 --> 04:07.470
+Leave i there if the length of i is not equal to 1.
+
+46
+04:07.940 --> 04:09.970
+And so that will remove
+
+47
+04:13.450 --> 04:21.550
+all the single letters from the list.
+
+48
+04:22.070 --> 04:30.850
+Then what I did was I created a new file, and then I iterated through the clean list, and then I wrote
+
+49
+04:31.420 --> 04:41.830
+those lines in the list plus a brake line so that they are separated each in a separate line.
+
+50
+04:41.890 --> 04:43.730
+This was the script.
+
+51
+04:44.500 --> 04:47.370
+I hope it was clear and I'll talk to you later.

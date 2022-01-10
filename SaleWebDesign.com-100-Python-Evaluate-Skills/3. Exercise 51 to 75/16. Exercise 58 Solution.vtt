@@ -1,0 +1,241 @@
+WEBVTT
+
+0
+00:00.990 --> 00:04.760
+Hi again! This is the solution to exercise 58.
+
+1
+00:05.010 --> 00:14.910
+And in this exercise you were asked to add a new employee to the Jason File which I provided
+
+2
+00:14.910 --> 00:21.230
+in the previous article, so that's the json file. Company1.
+
+3
+00:21.320 --> 00:28.500
+dot json. Let me play this to the right, so that we can see both the Python script and the json file.
+
+4
+00:30.980 --> 00:38.100
+So json file now has Albert Bert as new employee there.
+
+5
+00:38.260 --> 00:42.540
+So let me explain the script.
+
+6
+00:43.220 --> 00:48.160
+And so I'm using the json library here and then I'm opening
+
+7
+00:48.360 --> 00:51.900
+company1.json in read and write mode.
+
+8
+00:51.930 --> 00:55.160
+So r+ means read and write mode.
+
+9
+00:55.170 --> 01:00.470
+And I create a dictionary using Json.loads methods.
+
+10
+01:00.970 --> 01:06.600
+So file.read is gonna be this string.
+
+11
+01:06.680 --> 01:14.470
+So the text of course without the Albert Bert dictionary values.
+
+12
+01:14.670 --> 01:20.380
+See you this string is loaded as a dictionary using json.loads.
+
+13
+01:20.440 --> 01:24.770
+So json.loads converts a string to a dictionary object.
+
+14
+01:25.060 --> 01:34.910
+I'm doing this because I think this is the best way to add a new item to this big dictionary.
+
+15
+01:35.890 --> 01:47.500
+So we have a big dictionary here which is constructed of lists, anyway and what I do is I'm accessing
+
+16
+01:47.920 --> 01:48.790
+employees
+
+17
+01:52.420 --> 01:54.900
+the value of the employees key.
+
+18
+01:54.920 --> 01:56.700
+So this is dictionary.
+
+19
+01:56.900 --> 02:01.560
+And with d.employees I access this list.
+
+20
+02:01.670 --> 02:13.130
+So with all these names John, Anna, and Peter. So up to here we have a list and then we use the list method
+
+21
+02:13.430 --> 02:14.820
+called append.
+
+22
+02:14.960 --> 02:21.470
+And so we are appending now we need to append a new dictionary to this list.
+
+23
+02:21.620 --> 02:23.190
+So we have three dictionaries.
+
+24
+02:23.210 --> 02:28.050
+These are dictionaries with this key and this value, with this key and this value.
+
+25
+02:28.110 --> 02:30.090
+And so we need to append a dictionary.
+
+26
+02:30.110 --> 02:32.000
+So that's what I'm doing in here.
+
+27
+02:32.000 --> 02:39.480
+I'm creating a dictionary using the dict function and I'm creating a key called first name.
+
+28
+02:39.470 --> 02:42.060
+So these has to be the same as these ones
+
+29
+02:42.080 --> 02:45.380
+in here. First name Albert and last name Bert.
+
+30
+02:45.560 --> 02:54.570
+So two keys and two values, so that dictionary will be appended to this list which is a value of this
+
+31
+02:54.590 --> 02:56.600
+big dictionary.
+
+32
+02:56.850 --> 03:01.430
+So up to this point we have a new dictionary.
+
+33
+03:01.430 --> 03:06.400
+So we have this big dictionary that you see in here.
+
+34
+03:06.710 --> 03:13.490
+Now from now one we want to write that dictionary to the json file and here I'm using file.seek
+
+35
+03:13.490 --> 03:22.640
+and zero there what that does is it puts the cursor to the top of a file which means you know
+
+36
+03:22.640 --> 03:29.510
+when you read a file we open the file and we read the file contents and the cursor goes at end of the
+
+37
+03:29.510 --> 03:30.350
+file.
+
+38
+03:30.380 --> 03:32.010
+So just here.
+
+39
+03:32.250 --> 03:39.020
+So at this point the cursor is in here which means that if you want to write some content in here that's
+
+40
+03:39.020 --> 03:42.640
+content with be written under these lines.
+
+41
+03:42.890 --> 03:47.930
+But I don't want to do that so I want to put the cursor up here again.
+
+42
+03:47.940 --> 03:58.600
+So everything I do now it writes in here above the existing contents. So files.seek(0) does just
+
+43
+03:58.640 --> 04:02.180
+that, puts the cursor at the top of the file.
+
+44
+04:02.660 --> 04:11.240
+What I do is I use json.dump to put this dictionary object to write the dictionary object in this
+
+45
+04:11.720 --> 04:12.530
+file.
+
+46
+04:12.530 --> 04:20.200
+So in this file that we have opened and I use this indent option here. Arguments, I set it to 4.
+
+47
+04:20.470 --> 04:31.350
+So to have four spaces as indentation, then I sort the keys, so sort keys equal to true means that's the
+
+48
+04:31.610 --> 04:37.740
+string that will be written in the json file will have the same order as the dictionary.
+
+49
+04:38.340 --> 04:45.580
+And so what this will do, it will get the dictionary so  the dictionary including Albert. It will get
+
+50
+04:45.590 --> 04:51.660
+the dictionary and it will put in the current position of the cursor.
+
+51
+04:51.710 --> 04:57.850
+So it will put the dictionary on top of the existing content of the file.
+
+52
+04:58.240 --> 05:06.830
+So it's like copying these and putting all that in here and then the cursor is at the end of the dictionary
+
+53
+05:06.830 --> 05:09.030
+that you have just inserted there.
+
+54
+05:09.580 --> 05:17.660
+But I don't want to do is you use file.truncate which what it does is it truncates, so it deletes everything
+
+55
+05:18.380 --> 05:20.430
+under the cursor.
+
+56
+05:20.930 --> 05:30.130
+So what you end up is the dictionary, the updated dictionary in the json file. That's the solution.
+
+57
+05:30.250 --> 05:36.490
+I know it was quite complicated, but feel free to rewatch this video and ask questions if you, if there is
+
+58
+05:36.500 --> 05:38.280
+something you don't understand.
+
+59
+05:38.690 --> 05:41.040
+And yeah, thanks again, and I'll talk to you later.

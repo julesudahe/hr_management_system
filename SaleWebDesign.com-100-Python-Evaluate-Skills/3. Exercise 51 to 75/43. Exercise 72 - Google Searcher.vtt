@@ -1,0 +1,45 @@
+WEBVTT
+
+0
+00:00.880 --> 00:07.710
+Hey this is the question for exercise 72 and this is quite an interesting program that you'll make here
+
+1
+00:08.550 --> 00:17.350
+if you can, so please create a script that lets users, so it from the user to enter a search term.
+
+2
+00:17.490 --> 00:24.930
+Browser opens and the browser searches on Google for that term.
+
+3
+00:25.530 --> 00:27.470
+So all this happens automatically.
+
+4
+00:27.480 --> 00:28.770
+Let me demonstrate the script.
+
+5
+00:31.510 --> 00:34.760
+Python.
+
+6
+00:34.840 --> 00:40.120
+So the script is asking me for a query let's say tomato types.
+
+7
+00:40.960 --> 00:43.030
+I press Enter now as a user.
+
+8
+00:43.090 --> 00:49.910
+The browser opens and searches on Google for tomato types as you see the query here.
+
+9
+00:51.600 --> 00:54.810
+So it requires some research and I wish you good luck with this.
+
+10
+00:54.810 --> 00:55.110
+Thanks.

@@ -1,0 +1,29 @@
+WEBVTT
+
+0
+00:01.080 --> 00:08.190
+All right here is the question for exercise 84. For this exercise please use the pyglet library to create
+
+1
+00:08.250 --> 00:11.940
+a hello world application that looks like
+
+2
+00:18.000 --> 00:20.140
+this.
+
+3
+00:20.910 --> 00:29.340
+So it's just a window, a graphical user interface pyglet is a library, a third party library for games, to build
+
+4
+00:29.340 --> 00:31.020
+games in Python.
+
+5
+00:32.170 --> 00:37.170
+And yeah, this does require some research to come up with this and I wish you good luck!
+
+6
+00:37.200 --> 00:37.960
+See you later.

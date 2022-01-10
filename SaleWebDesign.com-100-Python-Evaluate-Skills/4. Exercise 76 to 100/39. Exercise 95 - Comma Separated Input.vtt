@@ -1,0 +1,49 @@
+WEBVTT
+
+0
+00:01.720 --> 00:10.330
+Hi, this is a question for exercise 95 and for this exercise I'd like to ask you to create a program
+
+1
+00:10.330 --> 00:20.110
+that asks the user to enter some values, enter some values separated by commas.
+
+2
+00:20.650 --> 00:28.990
+Let's say the user enters Mars, Jupiter, Earth, and Earth.
+
+3
+00:29.550 --> 00:36.010
+And once they use presses enter the program will store those values in a text file.
+
+4
+00:36.010 --> 00:39.430
+So if there is no text file a new text file will be generated.
+
+5
+00:39.430 --> 00:42.140
+So it was, this was just generated.
+
+6
+00:42.420 --> 00:45.800
+And so you see these three values in there.
+
+7
+00:45.920 --> 00:53.610
+Also you want to have the program to add new values to that text file.
+
+8
+00:53.740 --> 00:55.920
+When someone executes the program again.
+
+9
+00:56.080 --> 01:03.060
+So let's say I'm adding Pluto in there. Enter and you see Pluto is added there.
+
+10
+01:03.490 --> 01:08.140
+Yeah that's the functionality I'd like to have for this program.
+
+11
+01:08.200 --> 01:10.430
+I hope you solve it and I'll talk to you later.

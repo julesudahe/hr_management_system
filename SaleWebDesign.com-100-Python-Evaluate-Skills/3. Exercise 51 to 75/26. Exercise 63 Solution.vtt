@@ -1,0 +1,113 @@
+WEBVTT
+
+0
+00:00.990 --> 00:04.380
+Hello, this is a solution to exercise 63.
+
+1
+00:04.540 --> 00:12.240
+And for this exercise you were asked to write a program that behaves like this, so it prints of hello
+
+2
+00:12.240 --> 00:17.010
+instantly and then it prints it out after second, and then after two seconds, and then after three
+
+3
+00:17.010 --> 00:24.980
+seconds here, and then the program prints out end of loop and it terminates.
+
+4
+00:25.060 --> 00:27.220
+And yeah, this is the solution.
+
+5
+00:27.240 --> 00:33.540
+We're using the time module again. We are using a counter starting from i
+
+6
+00:33.880 --> 00:35.200
+equals to 0.
+
+7
+00:35.700 --> 00:38.370
+So again the question asks to print hello
+
+8
+00:38.370 --> 00:42.130
+instantly first so this is what we're doing here.
+
+9
+00:42.190 --> 00:51.540
+And you increase the counter so you are ready for the next iteration where you wait for seconds but
+
+10
+00:52.500 --> 00:56.320
+you also need to check if you're waiting more than three seconds.
+
+11
+00:56.340 --> 01:00.390
+Because if that is true we want to break the loop.
+
+12
+01:00.390 --> 01:06.440
+We want to print out end of loop and we want to break the loop so this break statement here will break the loop
+
+13
+01:06.440 --> 01:08.360
+so it will interrupt the loop.
+
+14
+01:08.700 --> 01:12.650
+Therefore we don't have more code after the while loop.
+
+15
+01:12.840 --> 01:20.540
+So the script, the program will stop, but in the first iteration i is just the one.
+
+16
+01:20.760 --> 01:23.040
+So it's not greater then three.
+
+17
+01:23.140 --> 01:30.140
+Therefore the script will sleep for one second in here and we'll go again in here.
+
+18
+01:30.330 --> 01:31.620
+Hello.
+
+19
+01:32.010 --> 01:38.130
+And then i will increase by 1, so it will be 2, but it's not equal to, it's not a greater than three again.
+
+20
+01:38.130 --> 01:45.660
+So these lines are not executed, and then the script will sleep for three seconds, and then it goes to three. Three is
+
+21
+01:45.690 --> 01:47.430
+not greater than three.
+
+22
+01:47.580 --> 01:50.230
+Therefore we execute this again three seconds.
+
+23
+01:50.280 --> 01:58.860
+But then when he goes the 4. 4 is greater than 3 therefore we get print end of loop and break the
+
+24
+01:58.860 --> 01:59.960
+script.
+
+25
+01:59.970 --> 02:05.770
+I hope this is clear enough to understand, but ask questions if you like.
+
+26
+02:05.820 --> 02:06.320
+Thanks.
+
+27
+02:06.340 --> 02:06.870
+And see you later.

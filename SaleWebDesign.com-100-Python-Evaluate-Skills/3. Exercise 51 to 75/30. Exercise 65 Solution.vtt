@@ -1,0 +1,81 @@
+WEBVTT
+
+0
+00:00.750 --> 00:03.670
+Hey! Hi again, this is the solution to exercise 65.
+
+1
+00:03.690 --> 00:10.060
+And the answer is you need to replace the break statement with a continue statement.
+
+2
+00:10.110 --> 00:10.770
+So if you execute
+
+3
+00:10.770 --> 00:12.520
+the code now,
+
+4
+00:15.930 --> 00:17.480
+you get hello hello hello
+
+5
+00:17.540 --> 00:20.160
+printed out repeatedly.
+
+6
+00:21.360 --> 00:23.720
+So that was the question for the exercise.
+
+7
+00:23.730 --> 00:30.180
+You need to print out hello repeatedly and you never print out hi. Why this happens is because you know
+
+8
+00:30.580 --> 00:37.250
+while true print hello if two is greater than one. It is greater then one, continue. What continue
+
+9
+00:37.310 --> 00:42.880
+does it continues the loop from the beginning
+
+10
+00:43.430 --> 00:51.050
+if this condition is true and so this condition is always true so what Python will do, what continue will
+
+11
+00:51.050 --> 00:58.550
+do, it will is to repeat the loop always repeatedly and it will never go through this line.
+
+12
+00:58.580 --> 01:07.660
+That's what continue does. So it's like the opposite of break because break breaks the loop at this
+
+13
+01:07.660 --> 01:08.920
+point.
+
+14
+01:08.930 --> 01:16.170
+It doesn't go to the next iteration of the loop but instead it goes the next line and pass.
+
+15
+01:16.190 --> 01:19.820
+What pass does is it prints,
+
+16
+01:19.910 --> 01:22.730
+it executes the next line.
+
+17
+01:22.730 --> 01:30.290
+But then the loop goes again repeatedly.  It executes again, and again, and again.
+
+18
+01:30.380 --> 01:36.950
+So this is the difference between these three statements break, pass, and continue.
+
+19
+01:36.950 --> 01:39.390
+I hope this was useful and I'll talk to you later.

@@ -1,0 +1,49 @@
+WEBVTT
+
+0
+00:01.180 --> 00:05.490
+Hi, this is the question for exercise 75 and for this exercise
+
+1
+00:05.520 --> 00:11.510
+I'd like you to plot the data in the file provided through this URL.
+
+2
+00:11.770 --> 00:15.150
+So this is the text file we worked earlier.
+
+3
+00:16.200 --> 00:16.960
+This one here.
+
+4
+00:17.000 --> 00:28.630
+So we have two columns with values and I wanted to use this input so that you create a script which
+
+5
+00:28.720 --> 00:33.970
+when executed produces this plot.
+
+6
+00:34.870 --> 00:39.830
+So these are the values of x and y.
+
+7
+00:40.900 --> 00:47.110
+So 3, 5, 4, 9, and so on. We have five points and
+
+8
+00:48.640 --> 00:53.220
+please keep in mind that you don't have to use this particular plot.
+
+9
+00:53.410 --> 00:56.350
+You can use any plot library that you want.
+
+10
+00:56.350 --> 01:01.600
+The important thing is you use a library so that you plug this data somehow.
+
+11
+01:01.600 --> 01:03.080
+Thanks and I'll talk to you later!

@@ -1,0 +1,37 @@
+WEBVTT
+
+0
+00:01.410 --> 00:03.670
+This is the question of exercise 46.
+
+1
+00:03.700 --> 00:11.340
+For this exercise you are required to write a script that extracts letters from the
+
+2
+00:11.340 --> 00:19.570
+twenty six text files that we created in the previous exercise and then put those letters in a python
+
+3
+00:19.570 --> 00:20.160
+list.
+
+4
+00:20.310 --> 00:23.520
+And of course print out the list.
+
+5
+00:24.380 --> 00:31.250
+If you don't have the 26 text files you can find them attached in this article.
+
+6
+00:31.260 --> 00:35.300
+So this is expected output of the script.
+
+7
+00:35.520 --> 00:39.400
+So I hope this is clear, but ask questions if you don't understand anything.
+
+8
+00:39.750 --> 00:40.800
+I'll talk to you later.

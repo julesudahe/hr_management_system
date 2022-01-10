@@ -1,0 +1,85 @@
+WEBVTT
+
+0
+00:01.640 --> 00:02.460
+Hello.
+
+1
+00:02.630 --> 00:06.710
+This is the question for exercise 99. For this exercise
+
+2
+00:06.710 --> 00:12.150
+please create a program that asks the user to submit text through a web app.
+
+3
+00:12.170 --> 00:15.120
+Anyway I did go a bit too far here.
+
+4
+00:15.190 --> 00:20.460
+So this is quite difficult to do if you are not familiar with building web applications,
+
+5
+00:20.480 --> 00:27.950
+but anyway you can see the solution in the next video where I explain to you the code and maybe you'll
+
+6
+00:27.950 --> 00:31.450
+understand how the web applications are built.
+
+7
+00:32.240 --> 00:35.330
+And we're building this with a Fask web framework.
+
+8
+00:35.570 --> 00:48.660
+So a Python library. Let me demonstrate you the web application. I simply run the script.
+
+9
+00:48.750 --> 00:54.140
+That means the application is running and I can access it in this address.
+
+10
+00:54.210 --> 01:01.650
+So port five thousand you can write down that address or you can do localhost5000. It's the
+
+11
+01:01.650 --> 01:02.410
+same thing.
+
+12
+01:02.600 --> 01:03.900
+And this is the web application.
+
+13
+01:06.980 --> 01:19.620
+What this will do is let me submit some text there. Line 1 for instance, submit. That creates a text
+
+14
+01:19.620 --> 01:24.120
+file, a text file yes, locally.
+
+15
+01:24.180 --> 01:28.200
+So in this folder where the Python script is.
+
+16
+01:32.700 --> 01:40.360
+And then the next time when you add more lines there, line 2, line 2 is added in that existing text file
+
+17
+01:41.300 --> 01:42.430
+and so on.
+
+18
+01:42.550 --> 01:45.220
+That's the web application.
+
+19
+01:45.220 --> 01:51.120
+So I hope you solve this, but if you cannot then just the go and learn Flask in the next video.
+
+20
+01:51.780 --> 01:52.790
+Talk to you there.

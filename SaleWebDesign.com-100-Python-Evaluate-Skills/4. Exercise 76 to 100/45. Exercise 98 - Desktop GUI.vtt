@@ -1,0 +1,101 @@
+WEBVTT
+
+0
+00:01.520 --> 00:05.230
+Hi again! This is very hard to solve. Anyway,
+
+1
+00:05.270 --> 00:08.160
+this is the question for exercise 98.
+
+2
+00:08.370 --> 00:17.750
+You have to create a program that asks the user to submit text through a graphical user interface.
+
+3
+00:17.830 --> 00:26.200
+Let me show you how this interface looks like, and all the details of how the program works.
+
+4
+00:26.300 --> 00:34.120
+This is a graphical user interface and it has three buttons an Add line, Safe changes, and a Save and close
+
+5
+00:34.140 --> 00:35.210
+button.
+
+6
+00:35.490 --> 00:42.900
+And it also has an entry text box where the user will enter the text.
+
+7
+00:42.900 --> 00:52.260
+Let's say first line in here. If the user wants to add the line to the text file it presses add line
+
+8
+00:52.740 --> 00:54.850
+and the text box empties.
+
+9
+00:54.850 --> 01:00.420
+So it's clears off and the user can enter more text lines in there.
+
+10
+01:00.420 --> 01:06.570
+However at this point to you as a programmer you haven't created, you haven't added the lines to a text
+
+11
+01:06.570 --> 01:08.340
+file yet.
+
+12
+01:08.340 --> 01:19.080
+If you want to do that you want to press save changes and then you see you have to create this, not that.
+
+13
+01:19.130 --> 01:19.440
+This
+
+14
+01:19.530 --> 01:22.400
+user_gui file.
+
+15
+01:22.410 --> 01:25.680
+So this is the first line.
+
+16
+01:25.680 --> 01:27.500
+Now if the user wants
+
+17
+01:28.410 --> 01:35.520
+to enter more lines, second line, I have a typo there.
+
+18
+01:36.900 --> 01:41.790
+Third line maybe, add line, save changes, and the lines are added instantly
+
+19
+01:41.880 --> 01:44.760
+in the text file when the user presses save changes.
+
+20
+01:44.760 --> 01:53.970
+And lastly if the user wants to close the program and just say save and close, and the program stops,
+
+21
+01:54.040 --> 02:01.740
+and the text file is there, and you can of course execute the program again.
+
+22
+02:01.740 --> 02:05.960
+Fourth line, add line, save and close.
+
+23
+02:06.180 --> 02:13.550
+Fourth line is added there. So yeah, it's a bit complex but try to build it as much as you can.
+
+24
+02:14.600 --> 02:17.450
+Hope you enjoy this and I'll talk to you later.

@@ -1,0 +1,57 @@
+WEBVTT
+
+0
+00:00.880 --> 00:07.190
+Hi there! This is the solution to exercise 23 and for this exercise you were asked to access
+
+1
+00:07.190 --> 00:12.390
+the third value key b and you were given these two lines.
+
+2
+00:12.480 --> 00:13.800
+The output was 13.
+
+3
+00:13.800 --> 00:18.100
+So the third line of this list is 13.
+
+4
+00:18.360 --> 00:20.170
+And this is the solution.
+
+5
+00:20.220 --> 00:27.740
+And it could also be good to print intermediate results such as a dictionary.
+
+6
+00:28.200 --> 00:31.100
+Sue I can explain things better with this.
+
+7
+00:31.110 --> 00:35.370
+It's a very good practice that you do as well to print out intermediate results.
+
+8
+00:35.530 --> 00:38.580
+So I'm accessing key b first.
+
+9
+00:38.640 --> 00:46.620
+Actually I'm accessing the value of key b which is this list so up to here this is a list object.
+
+10
+00:47.290 --> 00:58.560
+This list in here. And then from this list I access the third item which has an Index of 2. So 0, 1,
+
+11
+00:58.680 --> 00:59.500
+and 2.
+
+12
+00:59.780 --> 01:05.430
+And that will give me integer 13 and that's what I'm getting in here. That's the solution.
+
+13
+01:05.430 --> 01:05.910
+Thanks a lot.

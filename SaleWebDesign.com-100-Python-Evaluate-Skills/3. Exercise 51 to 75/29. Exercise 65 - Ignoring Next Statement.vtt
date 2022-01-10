@@ -1,0 +1,41 @@
+WEBVTT
+
+0
+00:01.100 --> 00:09.510
+Hello! This is the question for exercise 65 and this code is exactly the same code that I handed to you
+
+1
+00:10.050 --> 00:13.400
+for exercise 64.
+
+2
+00:14.820 --> 00:18.980
+So what this does is it prints hello.
+
+3
+00:19.500 --> 00:27.360
+However for this exercise I'd like to ask you to change this statement to something else.
+
+4
+00:27.450 --> 00:32.280
+So that hello is printed out repeatedly and hi
+
+5
+00:32.400 --> 00:33.820
+never printed.
+
+6
+00:34.120 --> 00:37.160
+So the code wold do like hello hello hello hello
+
+7
+00:37.170 --> 00:42.740
+all the time and I want you to do that by just changing this break statement to something else.
+
+8
+00:43.900 --> 00:44.740
+Well, good luck!
+
+9
+00:44.740 --> 00:45.430
+I'll talk to you later.

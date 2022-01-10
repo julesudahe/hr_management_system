@@ -1,0 +1,45 @@
+WEBVTT
+
+0
+00:00.830 --> 00:01.890
+Hi everyone!
+
+1
+00:01.900 --> 00:04.700
+This is a question off exercise 22.
+
+2
+00:04.750 --> 00:14.740
+And for this exercise I want you to create a dictionary of keys a, b, c. So we have three keys and each
+
+3
+00:14.740 --> 00:25.610
+key will have as a value a list from 1 to 10 for key a, 11 to 20 for key b, and 21 to 30 for key c.
+
+4
+00:25.720 --> 00:31.930
+So a dictionary of three keys of three values and the values are these three lists and then please print
+
+5
+00:31.930 --> 00:34.580
+out the dictionary.
+
+6
+00:35.080 --> 00:44.650
+So the output of these would be this one in here. As you can see this is a pretty print.
+
+7
+00:44.710 --> 00:53.810
+So a nice print of the dictionary. If you use print you probably get a not very nice view of the dictionary.
+
+8
+00:53.980 --> 00:57.950
+So take care of that too please.
+
+9
+00:58.490 --> 00:59.320
+And yeah, I'll talk to you later.
+
+10
+00:59.320 --> 00:59.620
+Thanks.

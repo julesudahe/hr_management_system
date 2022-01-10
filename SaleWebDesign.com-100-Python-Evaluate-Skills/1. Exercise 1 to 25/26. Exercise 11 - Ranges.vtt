@@ -1,0 +1,49 @@
+WEBVTT
+
+0
+00:00.560 --> 00:03.760
+Hi everyone and in this video I'll hand you exercise number 11
+
+1
+00:03.780 --> 00:10.080
+because as I've mentioned before for some exercise where I think I need to show the
+
+2
+00:10.140 --> 00:15.620
+output on a video, for such exercise will be having video as you see now.
+
+3
+00:16.080 --> 00:21.220
+So I'm using the Atom editor with the platformio ide terminal here.
+
+4
+00:21.600 --> 00:24.050
+Let me execute the exercise
+
+5
+00:24.150 --> 00:26.010
+11.
+
+6
+00:26.100 --> 00:31.710
+So what I'm executing now is a finished script so the solution for the exercise, but I won't show you
+
+7
+00:31.710 --> 00:36.350
+the solution. I'll be exiting this and just show you the output.
+
+8
+00:36.350 --> 00:44.740
+So for this exercise please generate at list from 1 to 20 but do not create the list manually.
+
+9
+00:44.840 --> 00:48.960
+such as creating square brackets 1, 2, 3, and 4 and so on.
+
+10
+00:49.050 --> 00:53.390
+So please generate a list dynamically and print it out as I did in here.
+
+11
+00:53.400 --> 00:53.700
+Thanks.

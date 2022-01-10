@@ -1,0 +1,141 @@
+WEBVTT
+
+0
+00:01.280 --> 00:08.770
+Hi this is the solution to exercise 94 and for this exercise I'll ask you to remove the s letters from
+
+1
+00:08.820 --> 00:10.010
+this file.
+
+2
+00:10.020 --> 00:16.510
+So in https and also add a slash in here and this is how I did it.
+
+3
+00:16.560 --> 00:25.710
+So first I opened the text file in read mode and I created a list containing all these lines as items
+
+4
+00:27.660 --> 00:35.460
+and I'm just printing the list here for intermediate results and then I created a new file where I wanted
+
+5
+00:35.460 --> 00:41.870
+to drop, to throw, to put the new cleaned lines in there.
+
+6
+00:42.480 --> 00:53.550
+So in write mode and than while the file is open I iterate through this list. Let me execute the script
+
+7
+00:53.550 --> 00:58.470
+to see what's going on.
+
+8
+00:58.470 --> 01:02.190
+So this lines list look looks like this.
+
+9
+01:04.830 --> 01:08.820
+And now the key here is to start from the small bits.
+
+10
+01:08.820 --> 01:15.410
+So first you want to remove the s letters from those lines.
+
+11
+01:15.410 --> 01:24.450
+And so I created this variable inside the loop so that will be equal to line.replace s with
+
+12
+01:24.570 --> 01:25.300
+nothing.
+
+13
+01:25.320 --> 01:31.440
+So I'm replacing the S letters with an empty string which means I'm removing the S letters.
+
+14
+01:31.450 --> 01:32.380
+This one here,
+
+15
+01:32.390 --> 01:43.050
+this one specifies that I want to remove, to replace the first occurrence of S letters because you know if
+
+16
+01:43.050 --> 01:51.480
+you don't put S there, if you don't put 1 there Python will remove for this line.
+
+17
+01:51.480 --> 01:55.240
+For example it will remove this S but this one also.
+
+18
+01:55.330 --> 02:02.030
+So you'll end up with www.tackoverflow.com. You don't want that.
+
+19
+02:02.070 --> 02:04.310
+So that's why you need one there.
+
+20
+02:04.680 --> 02:15.030
+So at this point we have, in the first iteration we have a http google.com and then what we do to google
+
+21
+02:15.050 --> 02:18.110
+dot com we add a slash.
+
+22
+02:18.180 --> 02:29.720
+So how I'm doing that is you know I split the line. Let me print this one here line_remove_s,
+
+23
+02:32.360 --> 02:40.130
+print line_remove_s_add_slash execute.
+
+24
+02:41.250 --> 02:43.410
+So this is what's going on here.
+
+25
+02:49.180 --> 03:02.060
+So this is line_remove_s and from this I'm accessing the first six letters which is one, two, three, four,
+
+26
+03:02.150 --> 03:05.280
+five, and six.
+
+27
+03:05.800 --> 03:11.480
+After that I add a new slash which is this one in here.
+
+28
+03:11.480 --> 03:19.680
+Then I concatenate that with this part of the string so starting from position 6 up to the end.
+
+29
+03:19.930 --> 03:27.760
+So I'm concatenating these three strings in here and yeah that's the idea. I do that for all of the iterations,
+
+30
+03:28.150 --> 03:31.530
+for all the lines of the text file.
+
+31
+03:31.540 --> 03:39.670
+And of course I write this line remove_s_add_slash variable which is a concatenation of these three
+
+32
+03:39.700 --> 03:40.630
+strings.
+
+33
+03:40.630 --> 03:46.680
+Added to the file with write method. That is the idea.
+
+34
+03:46.680 --> 03:52.200
+So quite tricky and I hope you understand it now. Thanks, I'll talk to you later.

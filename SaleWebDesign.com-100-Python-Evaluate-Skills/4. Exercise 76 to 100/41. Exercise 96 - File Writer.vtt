@@ -1,0 +1,49 @@
+WEBVTT
+
+0
+00:02.650 --> 00:09.910
+Hey this is a question for exercise 96 and for this exercise I'd like to create a program that asks
+
+1
+00:09.910 --> 00:16.820
+the users to submit text repeatedly which means like this.
+
+2
+00:17.710 --> 00:29.620
+So the user enters hey there you and so on and so forth. And the program closes when the user enters
+
+3
+00:29.680 --> 00:33.570
+CLOSE with capital letters.
+
+4
+00:33.590 --> 00:37.380
+At that point a text file has been created.
+
+5
+00:37.510 --> 00:45.270
+This one here, data.txt where you have all the user submitted values one in each line.
+
+6
+00:45.400 --> 00:47.070
+Hey there you.
+
+7
+00:47.920 --> 00:53.800
+And of course close it's not there because close has to be interpreted as a command to close the file
+
+8
+00:54.310 --> 00:56.330
+and to close the program.
+
+9
+00:57.160 --> 01:11.020
+And of course if someone executes the script the program again Hi again CLOSE, hi again is inserted in
+
+10
+01:11.020 --> 01:13.490
+the text file, in the existing text file.
+
+11
+01:13.870 --> 01:17.670
+That's the functionality you need to have for this program.

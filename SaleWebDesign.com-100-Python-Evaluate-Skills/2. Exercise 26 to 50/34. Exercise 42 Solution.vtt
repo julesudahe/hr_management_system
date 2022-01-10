@@ -1,0 +1,65 @@
+WEBVTT
+
+0
+00:01.090 --> 00:04.900
+This is the solution to exercise 42 and for this exercise
+
+1
+00:04.920 --> 00:13.530
+you were asked to print out in each line of the terminal the sum of homologous items from the two sequences.
+
+2
+00:14.080 --> 00:21.860
+So you 5, 7 and 9. You were given these two sequences, so a list and a tuple.
+
+3
+00:22.020 --> 00:23.480
+This is the solution.
+
+4
+00:24.210 --> 00:30.790
+Every time we wanted to do, to print something in a separate line you'd want to use a for loop.
+
+5
+00:31.010 --> 00:34.370
+And in this case we're using a zip function.
+
+6
+00:34.380 --> 00:42.120
+It's a Python built in function and what it does, the zip function it returns an iterator object
+
+7
+00:42.330 --> 00:45.490
+that aggregates two sequences.
+
+8
+00:45.600 --> 00:51.900
+In this case a and b, the list and the tuple. And then with with two variables
+
+9
+00:51.900 --> 01:01.150
+what you do is you access, in the first iteration you'd access the first item of each of these sequences.
+
+10
+01:01.310 --> 01:09.410
+So one on four in the first iteration and then you return the sum of them which is five and so on and
+
+11
+01:09.410 --> 01:13.830
+so forth until the last iteration which returns 9.
+
+12
+01:13.970 --> 01:20.900
+So three plus six. That's for this solution and explanation. Use a zip function whenever you want
+
+13
+01:20.900 --> 01:24.520
+to iterate to more than one sequence.
+
+14
+01:24.530 --> 01:24.880
+Thanks.
+
+15
+01:24.890 --> 01:25.410
+See you later.

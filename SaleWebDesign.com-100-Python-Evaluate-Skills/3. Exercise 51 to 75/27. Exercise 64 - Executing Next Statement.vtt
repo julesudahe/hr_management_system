@@ -1,0 +1,81 @@
+WEBVTT
+
+0
+00:02.160 --> 00:09.610
+Hi again, this is the question to exercise 64. This is an interesting exercise.  This prints out
+
+1
+00:09.630 --> 00:10.420
+hello.
+
+2
+00:10.590 --> 00:15.170
+This is what this code prints out and this is the question.
+
+3
+00:15.660 --> 00:25.770
+So the following code prints hello and checks if two is greater than one and it breaks the loop because
+
+4
+00:25.800 --> 00:27.820
+two is actually greater than one.
+
+5
+00:28.110 --> 00:33.460
+So the loop breaks and print hi is not executed.
+
+6
+00:33.460 --> 00:39.920
+Therefore whenever you execute the script you get hello only.
+
+7
+00:41.120 --> 00:50.760
+Now the question is I'd like to ask you to replace the break statement with something else so that both
+
+8
+00:50.790 --> 00:57.350
+hello and hi are printed out repeatedly so you'd get
+
+9
+00:57.450 --> 00:57.810
+Hello. Hi.
+
+10
+00:57.810 --> 00:58.440
+Hello.
+
+11
+00:58.440 --> 00:58.700
+Hi.
+
+12
+00:58.710 --> 00:58.980
+Hello.
+
+13
+00:58.980 --> 00:59.210
+Hi.
+
+14
+00:59.220 --> 00:59.430
+Hello.
+
+15
+00:59.430 --> 00:59.750
+Hi.
+
+16
+00:59.760 --> 01:04.530
+And so on. But please don't change any other part of the code.
+
+17
+01:04.620 --> 01:08.280
+Just this line. Change this to something else.
+
+18
+01:08.280 --> 01:10.710
+Please find out with what.
+
+19
+01:10.710 --> 01:11.660
+I'll talk to you later.

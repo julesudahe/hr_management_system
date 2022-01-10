@@ -1,0 +1,93 @@
+WEBVTT
+
+0
+00:00.590 --> 00:04.910
+Hi everyone!  This is the solution to exercise 12. For this exercise
+
+1
+00:04.910 --> 00:11.010
+you were given this range object, so the selected line is what you were given and you were required
+
+2
+00:11.040 --> 00:18.730
+to produce a list whose items are equal to the items of this range multiplied by 10.
+
+3
+00:18.750 --> 00:21.230
+So the output would be this one in.
+
+4
+00:21.240 --> 00:24.450
+Here. And this is how you solve it.
+
+5
+00:24.450 --> 00:28.640
+So you would want to use a list comprehension here.
+
+6
+00:28.680 --> 00:30.740
+This is the list comprehension.
+
+7
+00:30.870 --> 00:34.780
+So this is like a for loop but inside square brackets.
+
+8
+00:34.800 --> 00:42.390
+So in one single line and what we're doing is we're saying 10 times X where X is a variable we have
+
+9
+00:42.620 --> 00:44.270
+we are just defining in here.
+
+10
+00:44.640 --> 00:47.580
+Sue for x in my range.
+
+11
+00:47.640 --> 00:52.310
+So what this will do is you go through all the items off my range.
+
+12
+00:52.320 --> 00:59.630
+So it goes to the first item which is 1 and what it does it adds 10 times one in a new list.
+
+13
+00:59.670 --> 01:09.480
+So you have all this starting with 10 and then loop goes to the next iteration so it does 10 times 2 and
+
+14
+01:09.480 --> 01:11.500
+it puts 20 to the list.
+
+15
+01:11.530 --> 01:14.060
+So that's all the items one by one.
+
+16
+01:14.070 --> 01:16.610
+You could also do this using a for loop.
+
+17
+01:16.610 --> 01:21.080
+So a standard for loop. That will also be fine but this is more pythonic.
+
+18
+01:21.090 --> 01:25.660
+So we can't call this solution a better one because it's shorter.
+
+19
+01:25.900 --> 01:31.000
+Then we use the print statement to print this list which is in here.
+
+20
+01:31.770 --> 01:32.900
+That's about the solution.
+
+21
+01:32.940 --> 01:33.740
+Thanks.
+
+22
+01:33.750 --> 01:34.370
+See you later.
