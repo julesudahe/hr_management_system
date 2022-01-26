@@ -1,9 +1,9 @@
 
 class Investment:
     def __init__(self, p, i, n):
-        p = self.p
-        i = self.i 
-        n = self.n
+        self.p = p
+        self.i = i 
+        self.n = n
     def principal (self):
         return self.p*(1+self.i)**self.n 
     
