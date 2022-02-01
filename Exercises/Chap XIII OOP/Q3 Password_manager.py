@@ -1,0 +1,2 @@
+class Password_manager:
+    
