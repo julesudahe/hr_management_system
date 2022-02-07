@@ -4,9 +4,8 @@ class Password_manager:
 
     def old_password (self):
         old_password_list = []
-        for i in range (100):
-            old_password_list.append (self.latest_password)
-        return old_password_list
+        new_password = [self.latest_password]
+        return old_password_list + new_password
 
     def get_password (self):
         return self.old_password() [-1]
@@ -30,3 +29,4 @@ print (e.old_password())
 print (e.get_password())
 print (e.set_password())
 print (e.is_correct())
+
