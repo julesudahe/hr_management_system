@@ -1,10 +1,13 @@
-from pickle import APPEND
-
+from string import punctuation
 
 class Worldplay:
-    def __init__(self, string_word):
-        self.string_word = string_word
+    def __init__(self, words):
+        for c in punctuation:
+            words = words.replace (c, '')
+        words = words.lower ()
+        self.string_word = words.split ()
     
+   
     def word_with_lenght (self):
         word_lenght = []
         for i in range (len (self.string_word)):
@@ -25,15 +28,10 @@ class Worldplay:
                 end_with = end_with.append (len (self.string_word))
         print (end_with)
 
-list_word = []
-while list_word != True:
-    word = input ('Enter your word per word to make your list: ')
-    if list_word != True:
-        list_word = list_word.append (word)
-    else:
-        print ('Thanks')
-print (list_word)
+word = input ('Enter your word per word to make your list: ')
 
-final_list_word = Worldplay (list_word)
+
+final_list_word = Worldplay (word)
+print (final_list_word.__init__())
 print (final_list_word.end_with_s ())
 print (final_list_word.start_with_s ())
