@@ -1,9 +1,8 @@
-"""AndrewID: judahemu"""
+"""AndrewID: judahemu & Jeannette"""
 
 from datetime import datetime, date, time, timedelta
-from employee_master import Employee
 
-class Attendance(Employee):
+class Attendance:
     """
     This class import all attributes Employee class.
     We introduce two attributes: attendance_record to store attendance data, and
@@ -17,9 +16,8 @@ class Attendance(Employee):
         - record_out_time: method to record departure time.
     """
 
-    def __init__(self, first_name, last_name, employee_gender, salary):
+    def __init__(self):
         """Initializing the attributes of this class"""
-        super().__init__(first_name, last_name, employee_gender, salary)
         
         # List to store attendance records
         self.attendance_records = {}
@@ -77,7 +75,6 @@ class Attendance(Employee):
         
         attendance_record = {
             'employee_id': employee_id,
-            'full_name': self.get_full_name(),
             'in_time': in_time,
             'out_time': None,
             'is_late': is_late,

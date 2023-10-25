@@ -1,6 +1,6 @@
 """AndrewID: judahemu & Jeannette"""
 
-from employee import Employee
+from employee_master import Employee
 from attendance import Attendance
 from salary import Salary
 

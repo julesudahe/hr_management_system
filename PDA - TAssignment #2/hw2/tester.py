@@ -1,4 +1,4 @@
-"""AndrewID: judahemu"""
+"""AndrewID: judahemu & Jeannette"""
 
 # Importing different class to be used here during testing
 from employee import Employee

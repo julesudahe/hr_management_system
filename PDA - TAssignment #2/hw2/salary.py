@@ -1,4 +1,4 @@
-"""AndrewID: judahemu"""
+"""AndrewID: judahemu & Jeannette"""
 
 # Importing the Employee class from employee.py file (saved in the path as this file)
 from employee_master import Employee
