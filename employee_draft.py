@@ -13,8 +13,8 @@ class Employee:
     and getters that we will be used mostly by child classes 
     """
 
-    __last_employee_id = 0 # Class variable to keep track of the last generated employee ID
-
+    __last_employee_id = 0
+    
     def __init__(self, first_name, last_name, employee_gender, salary):
         """Initializing the attributes of this class"""
 

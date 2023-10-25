@@ -1,7 +1,7 @@
 """AndrewID: judahemu"""
 
 from datetime import datetime, date, time, timedelta
-from employee import Employee
+from employee_master import Employee
 
 class Attendance(Employee):
     """

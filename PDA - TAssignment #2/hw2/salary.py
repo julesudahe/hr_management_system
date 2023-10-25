@@ -1,7 +1,7 @@
 """AndrewID: judahemu"""
 
 # Importing the Employee class from employee.py file (saved in the path as this file)
-from employee import Employee
+from employee_master import Employee
 
 class Salary(Employee):
     """
@@ -27,7 +27,7 @@ class Salary(Employee):
         self.__allowance = allowance
         self.__bonus = bonus
 
-    def calculate_employee_salary(self): 
+    def calculate_employee_salary(self):
         """Calculate the total salary breakdown of the employee per year"""
         annual_salary = self.get_salary()
         annual_allowance = self.get_allowance() * self.get_salary() / 100
@@ -44,26 +44,6 @@ class Salary(Employee):
             'Total Salary (Yearly)': total_salary
         }
         return salary_breakdown
-    
-    def calculate_intern_earnings(self, internship_duration):
-        """Calculating the  intern's earnings based on internship duration."""
-        intern_salary = self.calculate_employee_salary() * internship_duration / 12
-
-        return intern_salary
-
-    def calculate_manager_earnings(self, manager_rate):
-        """Calculating the  manager's earnings based on the base salary and the manager rate."""
-        manager_allowance = self.calculate_employee_salary() * manager_rate / 100
-        manager_salary = self.calculate_employee_salary() + manager_allowance
-
-        return manager_salary
-    
-    def calculate_director_earnings(self, special_bonus_dir):
-        """Calculating the  director's earnings based on the base salary and the bonus."""
-        director_bonus = self.get_salary * special_bonus_dir
-        director_salary = self.calculate_employee_salary() + director_bonus
-        
-        return director_salary
     
     def calculate_monthly_salary(self):
         # ADD: handle internship monthly salary differently
