@@ -1,4 +1,4 @@
-"""AndrewID: judahemu"""
+"""AndrewID: judahemu & Jeannette"""
 
 from employee import Employee
 from attendance import Attendance
