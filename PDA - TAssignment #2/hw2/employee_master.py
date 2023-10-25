@@ -1,6 +1,6 @@
 """AndrewID: judahemu & Jeannette"""
 
-from serializer import DataSerializer
+import json
 
 class Employee:
     """
@@ -77,7 +77,7 @@ class Employee:
         }
 
         # Automatically store data to JSON
-        self.store_employees_to_json()
+        self.__class__.store_employees_to_json()
 
     @classmethod
     def generate_employee_id(cls):
@@ -98,11 +98,10 @@ class Employee:
     
     @staticmethod
     def store_employees_to_json():
-        """Store all employee data to a JSON file using DataSerializer."""
-        serializer = DataSerializer()
-        all_employees_info = Employee.get_all_employees()
-        serializer.serialize_employees_to_json(all_employees_info)
-        
+        """Store all employee data to a JSON file."""
+        with open("employees.json", "w", encoding="utf-8") as json_file:
+            json.dump(Employee.get_all_employees(), json_file, indent=4)
+
     def get_full_name(self):
         """Getter to combine the first and last name"""
         return self._first_name + " " + self._last_name
@@ -151,33 +150,3 @@ employee3 = Employee("Bob", "Johnson", "Male", 30000, "Director of Operations", 
 
 # Example 4: Creating an Intern
 employee4 = Employee("Eva", "Brown", "Female", 20000, "Researc Intern", "Intern", team="Development", department="Research", internship_duration=6)
-
-# # Example 5: Attempting to create an employee with invalid position
-# try:
-#     invalid_employee = Employee("Invalid", "Person", "Unknown", 25000, "InvalidPosition", "Employee")
-# except ValueError as e:
-#     print(f"Error: {e}")
-
-# # Example 6: Attempting to create an intern with invalid internship duration
-# try:
-#     invalid_intern = Employee("Invalid", "Intern", "Female", 18000, "Intern", "Intern", team="Research", internship_duration=7)
-# except ValueError as e:
-#     print(f"Error: {e}")
-
-# # Retrieving all employees from JSON file
-# serializer = HRMISDataSerializer()
-# retrieved_employees = serializer.deserialize_employees_from_json()
-
-# # Printing retrieved employee data
-# print("Retrieved Employee Data:")
-# for employee_id, employee_info in retrieved_employees.items():
-#     print(f"Employee ID: {employee_id}")
-#     print(f"Full Name: {employee_info['full_name']}")
-#     print(f"Email: {employee_info['email']}")
-#     print(f"Job Title: {employee_info['job_title']}")
-#     print(f"Gender: {employee_info['gender']}")
-#     print(f"Salary: {employee_info['salary']:.2f}")
-#     print(f"Level: {employee_info['level']}")
-#     print(f"Department: {employee_info['department']}")
-#     print(f"Team: {employee_info['team']}")
-#     print(f"Internship Duration (Months

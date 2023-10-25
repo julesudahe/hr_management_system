@@ -1,6 +1,8 @@
 """AndrewID: judahemu & Jeannette"""
 
+# import json
 from datetime import datetime, date, time, timedelta
+# from serializer import DataSerializer
 
 class Attendance:
     """
@@ -78,6 +80,7 @@ class Attendance:
             'in_time': in_time,
             'out_time': None,
             'is_late': is_late,
+            'is_early_departure': None,
             'leave_days': self.leave_balance.copy()
         }
         if employee_id not in self.attendance_records:
