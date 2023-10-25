@@ -1,1 +1,0 @@
-Clone the Project. git clone URL Go to Cloned project folder. 
