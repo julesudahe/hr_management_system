@@ -18,10 +18,6 @@ class EmployeeManagement:
         new_employee = Employee(first_name, last_name, employee_gender, salary, job_title, level, team, department, internship_duration)
         self.employees[new_employee.get_employee_id()] = new_employee
 
-        # Add the employee to the attendance and salary systems
-        # self.attendance_system.add_employee(new_employee.get_employee_id(), first_name, last_name, employee_gender, salary)
-        # self.salary_system.add_employee(new_employee.get_employee_id(), first_name, last_name, employee_gender, salary, deductions, allowance, bonus)
-
     def get_employee_info(self, employee_id):
         """Retrieve and display employee information"""
         if employee_id in self.employees:
