@@ -3,17 +3,17 @@
         {
             "employee_id": "CMUID0002",
             "full_name": "Alice Smith",
-            "in_time": "2023-10-26T02:23:40.878035",
-            "is_late": false,
-            "out_time": "2023-10-26T02:23:40.878035",
-            "is_early_departure": true
+            "in_time": "2023-10-26T22:08:34.617103",
+            "is_late": true,
+            "out_time": "2023-10-26T22:08:34.617103",
+            "is_early_departure": false
         }
     ],
     "CMUID0003": [
         {
             "employee_id": "CMUID0003",
             "full_name": "Bob Johnson",
-            "in_time": "2023-10-26T02:23:40.878035",
+            "in_time": "2023-10-26T22:08:34.617103",
             "is_late": true,
             "out_time": null
         }
