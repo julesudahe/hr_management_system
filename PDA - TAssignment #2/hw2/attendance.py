@@ -2,7 +2,7 @@
 
 import json
 from datetime import datetime, time
-from serializer import DataSerializer
+from deserializer import DataSerializer
 
 class Attendance:
     """

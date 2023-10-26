@@ -3,7 +3,7 @@
 # Importing the Employee class from employee.py file (saved in the path as this file)
 # import os
 import json
-from serializer import DataSerializer
+from deserializer import DataSerializer
 
 class Salary:
     """
