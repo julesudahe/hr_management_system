@@ -9,7 +9,7 @@ class Attendance:
     This class imports employee data and provides methods to record
     in-time and out-time for employees.
     """
-
+# hardcode the
     def __init__(self):
         """Initializing the attributes of this class"""
         # List to store attendance records
