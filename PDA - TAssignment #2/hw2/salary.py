@@ -29,7 +29,6 @@ class Salary:
         # Automatically store salary data to JSON file
         self.store_salary_to_json()
     
-    # @staticmethod
     def store_salary_to_json(self):
         """Store salary data to a JSON file."""
         # Calculate and store salary data
