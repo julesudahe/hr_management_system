@@ -115,7 +115,7 @@ class HRMIS:
             self.attendance_records[employee_id] = []
         self.attendance_records[employee_id].append(attendance)
 
-    def display_attendance_for_employee(self, employee_id):
+    def display_attendance_for_employees(self, employee_id):
         if employee_id not in self.attendance_records:
             print(f"No attendance records found for employee ID: {employee_id}")
             return
