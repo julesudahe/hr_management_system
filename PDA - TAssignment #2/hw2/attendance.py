@@ -3,7 +3,7 @@
 import json
 from datetime import datetime, time
 from deserializer import DataDeserializer
-
+ # add name, team
 class Attendance:
     """
     This class imports employee data and provides methods to record
@@ -18,47 +18,59 @@ class Attendance:
         """Record the in-time of the employee"""
         # Retrieve employee data from the JSON file
         employee_data = DataDeserializer().deserialize_employees_from_json()
-        employee_info = next((employee for employee in employee_data if employee.get(employee_id)), None)
+    
+        employee_info = None
+        for employee in employee_data:
+            if employee_id in employee:
+                employee_info = employee[employee_id]
+                break
 
-        is_late=False
         if employee_info:
-            if not is_late:
-                current_time = datetime.strptime(in_time, "%H:%M").time()
-                is_late = current_time > time(9, 0)
-
-            attendance_record = {
-                'employee_id': employee_id,
-                'date': date,
-                'in_time': in_time,
-                'is_late': is_late,
-                'out_time': None,
-                'is_early_departure': None
-            }
-
-            # Initialize attendance record list if not exists
-            if employee_id not in self.attendance_records:
-                self.attendance_records[employee_id] = []
-
-            self.attendance_records[employee_id].append(attendance_record)
+            full_name = employee_info.get("full_name")
+            team = employee_info.get("team")
+            # rest of your code remains the same
         else:
-            print("That EmployeeID does not exist")
+            print("EmployeeID does not exist.")
+            return  # Add this return statement to exit the function if employee ID does not exist.
 
-    def record_out_time(self, employee_id, date, out_time):
+        is_late = False
+        if not is_late:
+            current_time = datetime.strptime(in_time, "%H:%M").time()
+            is_late = current_time > time(9, 0)
+
+        attendance_record = {
+            'employee_id': employee_id,
+            'full_name': full_name,
+            'team': team,
+            'date': date,
+            'in_time': in_time,
+            'is_late': is_late,
+            'out_time': None,
+            'is_early_departure': None
+        }
+
+        # Initialize attendance record list if not exists
+        if employee_id not in self.attendance_records:
+            self.attendance_records[employee_id] = []
+
+        self.attendance_records[employee_id].append(attendance_record)
+
+    def record_out_time(self, employee_id_2, date_2, out_time_2):
         """Record the out-time of the employee"""
-        current_time = datetime.strptime(out_time, "%H:%M").time()
+        current_time = datetime.strptime(out_time_2, "%H:%M").time()
 
         is_early_departure=False
         if not is_early_departure:
             is_early_departure = current_time < time(17, 0)
 
-        if employee_id in self.attendance_records:
-            for record in self.attendance_records[employee_id]:
-                if record['out_time'] is None and record['date'] == date:
-                    record['out_time'] = out_time
+        if employee_id_2 in self.attendance_records:
+            for record in self.attendance_records[employee_id_2]:
+                if record['out_time'] is None and record['date'] == date_2:
+                    record['out_time'] = out_time_2
                     record['is_early_departure'] = is_early_departure
                     return
         else:
-            print(f"EmployeeID {employee_id} doesn't have a record for the given date.")
+            print(f"EmployeeID {employee_id_2} doesn't have a record for the given date.")
 
     def store_attendance_to_json(self):
         """Store all employee data as a JSON array to an existing JSON file."""
@@ -69,26 +81,58 @@ class Attendance:
         except FileNotFoundError:
             existing_data = []
 
-        for employee_id, attendance_info in self.attendance_records.items():
-            if employee_id not in existing_data:
-                existing_data.append({employee_id: attendance_info})
-
+        for employee_id_1, attendance_info in self.attendance_records.items():
+            for record in existing_data:
+                if employee_id_1 in record:
+                    # Update the existing record with the new attendance information
+                    existing_records = record[employee_id_1]
+                    for existing_record in existing_records:
+                        if existing_record['date'] == attendance_info[0]['date']:
+                            existing_record['out_time'] = attendance_info[0]['out_time']
+                            existing_record['is_early_departure'] = attendance_info[0]['is_early_departure']
+                            break
+                    break
+            else:
+                # If no existing record is found, add a new record to the existing data
+                existing_data.append({employee_id_1: attendance_info})
+                
         with open("attendance.json", "w", encoding="utf-8") as updated_file:
             json.dump(existing_data, updated_file, indent=4)
+            
 
-# record_attendance = Attendance()
+# Example usage of the Attendance class
 
-# # Record in-time for an employee with ID 'CMUID0001' on a specific date
-# # record_attendance.record_in_time('CMUID0001', '2023-10-29', '09:30')
+# Create an instance of the Attendance class
+attendance_manager = Attendance()
 
-# # # Record out-time for the same employee with ID 'CMUID0001' on the same date
-# # record_attendance.record_out_time('CMUID0001', '2023-10-29', '17:15')
+# Example 1: Recording in-time for an employee
+# employee_id = "CMUID0001"
+# date = "2023-10-29"
+# in_time = "09:30"
+# attendance_manager.record_in_time(employee_id, date, in_time)
 
-# # Record in-time for another employee with ID 'CMUID0002'.
-# record_attendance.record_in_time('CMUID000q1', '2023-10-30', '09:45')
+# # Example 2: Recording out-time for the same employee on the same date
+# out_time = "17:15"
+# attendance_manager.record_out_time(employee_id, date, out_time)
 
-# # Record out-time for the employee with ID 'CMUID0002' on the same date, indicating they left early
-# record_attendance.record_out_time('CMUID000q1', '2023-10-30', '16:45')
+# Example 3: Recording in-time for another employee on a different date
+employee_ids = "CMUID0002"
+dates = "2023-10-30"
+in_times = "09:45"
+attendance_manager.record_in_time(employee_ids, dates, in_times)
 
-# # Store attendance data to JSON file
-# record_attendance.store_attendance_to_json()
+out_time = "17:15"
+attendance_manager.record_out_time(employee_ids, dates, out_time)
+# Example 4: Storing attendance records to a JSON file
+attendance_manager.store_attendance_to_json()
+
+# # Example 5: Displaying attendance records for individual employees
+# print("Attendance Records for CMUID0001:")
+# print(attendance_manager.attendance_records.get("CMUID0001", "No attendance records found"))
+
+# print("Attendance Records for CMUID0002:")
+# print(attendance_manager.attendance_records.get("CMUID0002", "No attendance records found"))
+
+# # Example 6: Displaying attendance records for the entire team
+# print("Attendance Records for the Entire Team:")
+# print(json.dumps(attendance_manager.attendance_records, indent=4))

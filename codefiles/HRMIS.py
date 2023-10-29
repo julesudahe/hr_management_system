@@ -50,21 +50,21 @@ class HRMIS:
     #     else:
     #         print(f"No employee found with ID: {employee_id}")
     
-    def record_attendance(self, employee_id, date, in_time, out_time):
-        if employee_id in self.employees:
-            employee = self.employees[employee_id]
-            self.attendance_records[(employee_id, date)] = Attendance(employee_id, employee.first_name, employee.last_name, employee.email, employee.salary, date, in_time, out_time)
-        else:
-            print(f"No employee found with ID: {employee_id}")
+    # def record_attendance(self, employee_id, date, in_time, out_time):
+    #     if employee_id in self.employees:
+    #         employee = self.employees[employee_id]
+    #         self.attendance_records[(employee_id, date)] = Attendance(employee_id, employee.first_name, employee.last_name, employee.email, employee.salary, date, in_time, out_time)
+    #     else:
+    #         print(f"No employee found with ID: {employee_id}")
     
-    def update_salary(self, employee_id, deductions=0, allowances=0, bonuses=0):
-        if employee_id in self.salaries:
-            salary = self.salaries[employee_id]
-            salary.deductions = deductions
-            salary.allowances = allowances
-            salary.bonuses = bonuses
-        else:
-            print(f"No salary record found for employee ID: {employee_id}")
+    # def update_salary(self, employee_id, deductions=0, allowances=0, bonuses=0):
+    #     if employee_id in self.salaries:
+    #         salary = self.salaries[employee_id]
+    #         salary.deductions = deductions
+    #         salary.allowances = allowances
+    #         salary.bonuses = bonuses
+    #     else:
+    #         print(f"No salary record found for employee ID: {employee_id}")
 
     def display_employee_info(self, employee_id):
         if employee_id in self.employees:
@@ -79,13 +79,13 @@ class HRMIS:
         else:
             print(f"No attendance record found for employee ID: {employee_id} on {date}")
 
-    def display_employee_salary(self, employee_id):
-        if employee_id in self.salaries:
-            self.salaries[employee_id].display_salary_details()
-        else:
-            print(f"No salary record found for employee ID: {employee_id}")
+    # def display_employee_salary(self, employee_id):
+    #     if employee_id in self.salaries:
+    #         self.salaries[employee_id].display_salary_details()
+    #     else:
+    #         print(f"No salary record found for employee ID: {employee_id}")
 
-    # def delete_employee(self, employee_id):
+    # # def delete_employee(self, employee_id):
     #     if employee_id in self.employees:
     #         del self.employees[employee_id]
             

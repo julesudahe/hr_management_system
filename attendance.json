@@ -3,6 +3,8 @@
         "CMUID0001": [
             {
                 "employee_id": "CMUID0001",
+                "full_name": "John Doe",
+                "team": "Development",
                 "date": "2023-10-29",
                 "in_time": "09:30",
                 "is_late": true,
@@ -15,23 +17,13 @@
         "CMUID0002": [
             {
                 "employee_id": "CMUID0002",
+                "full_name": "Alice Smith",
+                "team": "Development",
                 "date": "2023-10-30",
                 "in_time": "09:45",
                 "is_late": true,
-                "out_time": "16:45",
-                "is_early_departure": true
-            }
-        ]
-    },
-    {
-        "CMUID000q1": [
-            {
-                "employee_id": "CMUID000q1",
-                "date": "2023-10-30",
-                "in_time": "09:45",
-                "is_late": true,
-                "out_time": "16:45",
-                "is_early_departure": true
+                "out_time": "17:15",
+                "is_early_departure": false
             }
         ]
     }

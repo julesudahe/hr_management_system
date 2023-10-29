@@ -3,7 +3,7 @@
 # Importing the Employee class from employee.py file (saved in the path as this file)
 # import os
 import json
-from deserializer import DataSerializer
+from deserializer import DataDeserializer
 
 class Salary:
     """
@@ -33,40 +33,37 @@ class Salary:
         self.store_salary_to_json()
     
     def store_salary_to_json(self):
-        """Store salary data to a JSON file."""
-        # Calculate and store salary data
-        # salary_instance = Salary()
-        salary_data = self.calculate_and_return_salary_breakdowns()
+        """Calculate and store monthly salary data to a JSON file."""
+        employee_data = DataDeserializer().deserialize_employees_from_json()
+        salary_results = {}
+
+        for employee_dict in employee_data:
+            employee_id, employee_info = list(employee_dict.items())[0]
+            full_name = employee_info.get("full_name")
+            employee_salary = employee_info.get("salary")
+
+            monthly_breakdown = self.calculate_monthly_salary(employee_salary)
+            
+            result_dict = {
+                'employee_id': employee_id,
+                'full_name': full_name,
+                'base_salary_monthly': round(monthly_breakdown['base_salary_monthly'], 2),
+                'allowance_monthly': round(monthly_breakdown['allowance_monthly'], 2),
+                'bonus_monthly': round(monthly_breakdown['bonus_monthly'], 2),
+                'deductions_monthly': round(monthly_breakdown['deductions_monthly'], 2),
+                'net_pay_monthly': round(monthly_breakdown['net_pay_monthly'], 2)
+            }
+            salary_results[employee_id] = result_dict
 
         with open("salary.json", "w", encoding="utf-8") as json_file:
-            json.dump(salary_data, json_file, indent=4)
+            json.dump(salary_results, json_file, indent=4)
 
-    def calculate_employee_salary(self, salary):
-        """Calculate the total salary breakdown of the employee per year"""
-        annual_salary = salary
-        annual_allowance = self.get_allowance() * salary / 100
-        annual_bonus = self.get_bonus() * salary / 100
-        annual_deductions = self.get_deductions() * salary / 100
-        
-        total_salary = annual_salary + annual_allowance + annual_bonus - annual_deductions
-        
-        salary_breakdown = {
-            'base_salary_yearly': annual_salary,
-            'allowance_yearly': annual_allowance,
-            'bonus_yearly': annual_bonus,
-            'deductions_yearly': annual_deductions,
-            'net_pay_yearly': total_salary
-        }
-        return salary_breakdown
-    
     def calculate_monthly_salary(self, salary):
-        # ADD: handle internship monthly salary differently
         """Calculate monthly net salary."""
-        yearly_breakdown = self.calculate_employee_salary(salary)
-        monthly_base_salary = yearly_breakdown['base_salary_yearly'] / 12
-        total_allowance = yearly_breakdown['allowance_yearly'] / 12
-        total_bonus = yearly_breakdown['bonus_yearly'] / 12
-        total_deductions = yearly_breakdown['net_pay_yearly'] / 12
+        monthly_base_salary = int(salary) / 12
+        total_allowance = self.get_allowance() * monthly_base_salary / 100
+        total_bonus = self.get_bonus() * monthly_base_salary / 100
+        total_deductions = self.get_deductions() * monthly_base_salary / 100
 
         net_pay = monthly_base_salary + total_allowance + total_bonus - total_deductions
 
@@ -78,39 +75,7 @@ class Salary:
             'net_pay_monthly': net_pay
         }
         return salary_breakdown
-    
-    def calculate_and_return_salary_breakdowns(self):
-        """Calculate and return yearly and monthly salary breakdowns for each employee.
-        Returns a list of dictionaries with the specified structure."""
-        employee_data = DataSerializer().deserialize_employees_from_json()
-        
-        salary_results = {}
 
-        for employee_id, employee_info in employee_data.items():
-            full_name = employee_info.get("full_name")
-            employee_salary = employee_info.get("salary")
-
-            yearly_breakdown = self.calculate_employee_salary(employee_salary)
-            monthly_breakdown = self.calculate_monthly_salary(employee_salary)
-
-            result_dict = {
-                'employee_id': employee_id,
-                'full_name': full_name,
-                'base_salary_yearly': yearly_breakdown['base_salary_yearly'],
-                'allowance_yearly': yearly_breakdown['allowance_yearly'],
-                'bonus_yearly': yearly_breakdown['bonus_yearly'],
-                'deductions_yearly': yearly_breakdown['deductions_yearly'],
-                'net_pay_yearly': yearly_breakdown['net_pay_yearly'],
-                'base_salary_monthly': monthly_breakdown['base_salary_monthly'],
-                'allowance_monthly': monthly_breakdown['allowance_monthly'],
-                'bonus_monthly': monthly_breakdown['bonus_monthly'],
-                'deductions_monthly': monthly_breakdown['deductions_monthly'],
-                'net_pay_monthly': monthly_breakdown['net_pay_monthly']
-            }
-            salary_results[employee_id] = result_dict
-
-        return salary_results
-    
     def get_bonus(self):
         """Getter for bonus"""
         return self.__bonus
@@ -123,5 +88,32 @@ class Salary:
         """Getter for bonus"""
         return self.__allowance
 
-salary_instances = Salary(deductions=10, allowance=5, bonus=2)
+    def display_salary_breakdown(self, employee_id):
+        """Display the calculated salary breakdown for the specified employee ID."""
+        with open("salary.json", "r", encoding="utf-8") as json_file:
+            salary_data = json.load(json_file)
+
+        if employee_id in salary_data:
+            employee_info = salary_data[employee_id]
+            full_name = employee_info.get("full_name")
+            base_salary = employee_info.get("base_salary_monthly")
+            allowance = employee_info.get("allowance_monthly")
+            bonus = employee_info.get("bonus_monthly")
+            deductions = employee_info.get("deductions_monthly")
+            net_pay = employee_info.get("net_pay_monthly")
+
+            print(f"Employee ID: {employee_id}")
+            print(f"Full Name: {full_name}")
+            print(f"Base Salary: {base_salary:.2f}")
+            print(f"Allowance: {allowance:.2f}")
+            print(f"Bonus: {bonus:.2f}")
+            print(f"Deductions: {deductions:.2f}")
+            print(f"Net Pay: {net_pay:.2f}")
+        else:
+            print(f"No salary information found for Employee ID: {employee_id}")
+
+
+# salary_instances = Salary(deductions=10, allowance=5, bonus=2)
+# employee_id_to_display = "CMUID0001"
+# salary_instances.display_salary_breakdown(employee_id_to_display)
 

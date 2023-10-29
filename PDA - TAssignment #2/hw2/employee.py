@@ -128,21 +128,17 @@ class Employee:
     def get_gender(self):
         """Getter for gender"""
         return self._employee_gender
-    
-    def show_employee_info(self):
-        """Build the print function for this class"""
-        print(f"EmployeeID: {self.get_employee_id()}")
-        print(f"Full Name: {self.get_full_name()}")
-        print(f"Email: {self.get_email()}")
-        print(f"Job Title: {self.job_title}")
-        print(f"Gender: {self.get_gender()}")
-        print(f"Salary: {self.get_salary():.2f}")
 
-        if self.level == "Director":
-            print(f"Department: {self.department}")
-        elif self.level == "Manager":
-            print(f"Team: {self.team}")
-        elif self.level == "Intern":
-            print(f"Team: {self.team}")
-            print(f"Internship Duration (Months): {self.internship_duration}")
-            
+employee1 = Employee("John", "Doe", "Male", 50000, "Software Developer", "Employee", "Development", "Backend")
+employee2 = Employee("Alice", "Smith", "Female", 55000, "Project Manager", "Manager", "Project Management", "Project A")
+employee3 = Employee("Eva", "Johnson", "Female", 60000, "Director", "Director", None, "Development")
+
+# # Accessing employee information
+# print(employee1.get_full_name())  # Output: John Doe
+# print(employee1.get_email())  # Output: john.doe@andrew.cmu.edu
+# print(employee1.get_salary())  # Output: 50000
+# print(employee1.get_employee_id())  # Output: CMUID0001
+# print(employee1.get_gender())  # Output: Male
+
+# Storing employees' data to JSON file
+# employee1.store_employees_to_json(employee1.all_employees)
