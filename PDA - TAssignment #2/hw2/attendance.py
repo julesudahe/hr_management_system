@@ -2,7 +2,7 @@
 
 import json
 from datetime import datetime, time
-from deserializer import DataSerializer
+from deserializer import DataDeserializer
 
 class Attendance:
     """
@@ -21,7 +21,7 @@ class Attendance:
     def record_in_time(self, employee_id, is_late=False):
         """Record the in-time of the employee"""
         # Retrieve employee data from the JSON file
-        employee_data = DataSerializer().deserialize_employees_from_json()
+        employee_data = DataDeserializer().deserialize_employees_from_json()
 
         if employee_id in employee_data:
             current_time = datetime.now().time()

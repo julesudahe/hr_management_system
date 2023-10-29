@@ -18,7 +18,7 @@ class Salary:
     """
 ## handling missing employee_id
 ## handling intern salary
-## error message when json for employee is empty or missing. 
+## error message when json for employee is empty or missing.
 
     def __init__(self, deductions = 0.0, allowance = 0.0, bonus = 0.0):
         """Initializing the attributes of this class"""

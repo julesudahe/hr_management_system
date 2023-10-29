@@ -64,7 +64,7 @@ class Employee:
         self.department = department
         self.internship_duration = internship_duration
 
-        self.__class__.all_employees[self.get_employee_id()] = {
+        self.all_employees[self.get_employee_id()] = {
             "full_name": self.get_full_name(),
             "email": self.get_email(),
             "job_title": self.job_title,
@@ -77,7 +77,7 @@ class Employee:
         }
 
         # Automatically store data to JSON
-        self.__class__.store_employees_to_json()
+        Employee.store_employees_to_json(self.all_employees)
 
     @classmethod
     def generate_employee_id(cls):
@@ -91,16 +91,23 @@ class Employee:
         """Generate automatically the email based on first name and last name"""
         return f"{first_name.lower()}.{last_name.lower()}@andrew.cmu.edu"
     
-    @classmethod
-    def get_all_employees(cls):
-        """Returns a dictionary containing all employee information."""
-        return cls.all_employees
-    
     @staticmethod
-    def store_employees_to_json():
-        """Store all employee data to a JSON file."""
-        with open("employees.json", "w", encoding="utf-8") as json_file:
-            json.dump(Employee.get_all_employees(), json_file, indent=4)
+    def store_employees_to_json(new_employee_data):
+        """Store all employee data as a JSON array to an existing JSON file."""
+
+        try:
+            with open("employees.json", "r", encoding="utf-8") as existing_file:
+                existing_data = json.load(existing_file)
+        except FileNotFoundError:
+            existing_data = []
+
+        # Merge existing data with new data
+        for employee_id, employee_info in new_employee_data.items():
+            if employee_id not in existing_data:
+                existing_data.append({employee_id: employee_info})
+        
+        with open("employees.json", "w", encoding="utf-8") as updated_file:
+            json.dump(existing_data, updated_file, indent=4)
 
     def get_full_name(self):
         """Getter to combine the first and last name"""
@@ -138,15 +145,4 @@ class Employee:
         elif self.level == "Intern":
             print(f"Team: {self.team}")
             print(f"Internship Duration (Months): {self.internship_duration}")
-
-# Example 1: Creating an Employee
-employee1 = Employee("John", "Doe", "Male", 50000, "Marketing Manager", "Manager", team="Marketing", department="Marketing & Communications")
-
-# Example 2: Creating a Manager
-employee2 = Employee("Alice", "Smith", "Female", 40000, "Manager", "Manager", team="Sales", department="Sales")
-
-# Example 3: Creating a Director
-employee3 = Employee("Bob", "Johnson", "Male", 30000, "Director of Operations", "Director", department="Finance")
-
-# Example 4: Creating an Intern
-employee4 = Employee("Eva", "Brown", "Female", 20000, "Researc Intern", "Intern", team="Development", department="Research", internship_duration=6)
+            

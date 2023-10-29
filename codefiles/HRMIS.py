@@ -10,13 +10,13 @@ class HRMIS:
         self.attendance_records = {}  # key: (employee_id, date), value: Attendance object
         self.salaries = {}  # key: employee_id, value: Salary object
     
-    def add_employee(self, employee_id, first_name, last_name, email, salary):
-        if employee_id in self.employees:
-            print(f"An employee with ID: {employee_id} already exists.")
-            return
-        self.employees[employee_id] = Employee(employee_id, first_name, last_name, email, salary)
-        self.salaries[employee_id] = Salary(salary)
-        print(f"Added records for employee ID: {employee_id}")
+    # def add_employee(self, employee_id, first_name, last_name, email, salary):
+    #     if employee_id in self.employees:
+    #         print(f"An employee with ID: {employee_id} already exists.")
+    #         return
+    #     self.employees[employee_id] = Employee(employee_id, first_name, last_name, email, salary)
+    #     self.salaries[employee_id] = Salary(salary)
+    #     print(f"Added records for employee ID: {employee_id}")
 
     def update_employee(self, employee_id, first_name=None, last_name=None, email=None, salary=None):
         if employee_id not in self.employees:

@@ -1,54 +1,41 @@
 """AndrewID: judahemu & Jeannette"""
 
+import json
 from employee_master import Employee
-from attendance import Attendance
-from salary import Salary
+from deserializer import DataDeserializer
+# from attendance import Attendance
+# from salary import Salary
 
 class EmployeeManagement:
     """Initialize empty dictionaries to store employee objects, attendance, and salary information"""
         
     def __init__(self):
-        """Initialize empty dictionaries to store employee objects, attendance, and salary information"""
+        """Initialize dictionaries to store employee objects, attendance, and salary information"""
         self.employees = {}
-        self.attendance_system = Attendance()
-        self.salary_system = Salary()
+        # self.attendance_system = Attendance()
+        # self.salary_system = Salary()
 
-    def add_employee(self, first_name, last_name, employee_gender, salary, job_title, level, team=None, department=None, internship_duration=None):#, deductions=0.0, allowance=0.0, bonus=0.0):
+    def add_employee(self, first_name, last_name, employee_gender, salary, job_title, level, team=None, department=None, internship_duration=None):
         """Create an Employee object and add it to the employees dictionary"""
-        new_employee = Employee(first_name, last_name, employee_gender, salary, job_title, level, team, department, internship_duration)
-        self.employees[new_employee.get_employee_id()] = new_employee
+        Employee(first_name, last_name, employee_gender, salary, job_title, level, team, department, internship_duration)
 
-    def get_employee_info(self, employee_id):
-        """Retrieve and display employee information"""
-        if employee_id in self.employees:
-            employee = self.employees[employee_id]
-            employee.show_employee_info()
-        else:
-            print("Employee not found.")
+    def delete_employee(self, target_employee_id):
+        """Delete an employee's information from the JSON file."""
+        data_deserializer = DataDeserializer()
+        employee_data = data_deserializer.deserialize_employees_from_json()
 
-    def record_in_time(self, employee_id, is_late=False):
-        """Record employee in-time using the attendance system"""
-        if employee_id in self.employees:
-            employee = self.employees[employee_id]
-            self.attendance_system.record_in_time(employee.get_employee_id(), is_late)
-        else:
-            print("Employee not found.")
+        removed_employees = [employee_info for employee_info in employee_data if target_employee_id in employee_info.keys()]
+        employee_data = [employee_info for employee_info in employee_data if target_employee_id not in employee_info.keys()]
 
-    def record_out_time(self, employee_id, is_early_departure=False):
-        """Record employee out-time using the attendance system"""
-        if employee_id in self.employees:
-            employee = self.employees[employee_id]
-            self.attendance_system.record_out_time(employee.get_employee_id(), is_early_departure)
+        if removed_employees:
+            self._save_to_json(employee_data)
+            print(f"Employee with ID {target_employee_id} deleted.")
         else:
-            print("Employee not found.")
+            print("Employee not found. Available IDs:", [list(record.keys())[0] for record in employee_data])
+    
+    def _save_to_json(self, employee_data):
+        """Save the employee data to the JSON file."""
+        with open("employees.json", "w", encoding="utf-8") as json_file:
+            json.dump(employee_data, json_file, indent=4)
 
-    def calculate_employee_salary(self, employee_id):
-        """Calculate and display employee salary using the salary system"""
-        if employee_id in self.employees:
-            employee = self.employees[employee_id]
-            salary_breakdown = self.salary_system.calculate_employee_salary(employee.get_employee_id())
-            print("Salary Breakdown:")
-            for category, amount in salary_breakdown.items():
-                print(f"{category}: {amount:.2f}")
-        else:
-            print("Employee not found.")
+employee_management = EmployeeManagement()
