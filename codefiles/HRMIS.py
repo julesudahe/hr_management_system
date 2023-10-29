@@ -18,37 +18,37 @@ class HRMIS:
     #     self.salaries[employee_id] = Salary(salary)
     #     print(f"Added records for employee ID: {employee_id}")
 
-    def update_employee(self, employee_id, first_name=None, last_name=None, email=None, salary=None):
-        if employee_id not in self.employees:
-            print(f"No employee found with ID: {employee_id}")
-            return
-        employee = self.employees[employee_id]
-        if first_name:
-            employee.first_name = first_name
-        if last_name:
-            employee.last_name = last_name
-        if email:
-            employee.email = email
-        if salary:
-            employee.salary = salary
-            self.salaries[employee_id].base_salary = salary  # update salary object as well
-        print(f"Updated records for employee ID: {employee_id}")
+    # def update_employee(self, employee_id, first_name=None, last_name=None, email=None, salary=None):
+    #     if employee_id not in self.employees:
+    #         print(f"No employee found with ID: {employee_id}")
+    #         return
+    #     employee = self.employees[employee_id]
+    #     if first_name:
+    #         employee.first_name = first_name
+    #     if last_name:
+    #         employee.last_name = last_name
+    #     if email:
+    #         employee.email = email
+    #     if salary:
+    #         employee.salary = salary
+    #         self.salaries[employee_id].base_salary = salary  # update salary object as well
+    #     print(f"Updated records for employee ID: {employee_id}")
 
-    def delete_employee(self, employee_id):
-        if employee_id in self.employees:
-            del self.employees[employee_id]
+    # def delete_employee(self, employee_id):
+    #     if employee_id in self.employees:
+    #         del self.employees[employee_id]
             
-            # Delete salary details of the employee
-            if employee_id in self.salaries:
-                del self.salaries[employee_id]
+    #         # Delete salary details of the employee
+    #         if employee_id in self.salaries:
+    #             del self.salaries[employee_id]
             
-            # Delete all attendance records of the employee
-            for key in list(self.attendance_records.keys()):
-                if key[0] == employee_id:
-                    del self.attendance_records[key]
-            print(f"Deleted records for employee ID: {employee_id}")
-        else:
-            print(f"No employee found with ID: {employee_id}")
+    #         # Delete all attendance records of the employee
+    #         for key in list(self.attendance_records.keys()):
+    #             if key[0] == employee_id:
+    #                 del self.attendance_records[key]
+    #         print(f"Deleted records for employee ID: {employee_id}")
+    #     else:
+    #         print(f"No employee found with ID: {employee_id}")
     
     def record_attendance(self, employee_id, date, in_time, out_time):
         if employee_id in self.employees:
@@ -85,35 +85,35 @@ class HRMIS:
         else:
             print(f"No salary record found for employee ID: {employee_id}")
 
-    def delete_employee(self, employee_id):
-        if employee_id in self.employees:
-            del self.employees[employee_id]
+    # def delete_employee(self, employee_id):
+    #     if employee_id in self.employees:
+    #         del self.employees[employee_id]
             
-            # Delete salary details of the employee
-            if employee_id in self.salaries:
-                del self.salaries[employee_id]
+    #         # Delete salary details of the employee
+    #         if employee_id in self.salaries:
+    #             del self.salaries[employee_id]
             
-            # Delete all attendance records of the employee
-            for key in list(self.attendance_records.keys()):
-                if key[0] == employee_id:
-                    del self.attendance_records[key]
+    #         # Delete all attendance records of the employee
+    #         for key in list(self.attendance_records.keys()):
+    #             if key[0] == employee_id:
+    #                 del self.attendance_records[key]
                     
-            print(f"Deleted records for employee ID: {employee_id}")
-        else:
-            print(f"No employee found with ID: {employee_id}")
+    #         print(f"Deleted records for employee ID: {employee_id}")
+    #     else:
+    #         print(f"No employee found with ID: {employee_id}")
 
-    def record_attendance(self, employee_id, date, in_time, out_time):
-        if employee_id not in self.employees:
-            print(f"No employee found with ID: {employee_id}")
-            return
+    # def record_attendance(self, employee_id, date, in_time, out_time):
+    #     if employee_id not in self.employees:
+    #         print(f"No employee found with ID: {employee_id}")
+    #         return
         
-        employee = self.employees[employee_id]
-        attendance = Attendance(employee_id, employee.first_name, employee.last_name, employee.email, employee.salary, date, in_time, out_time)
+    #     employee = self.employees[employee_id]
+    #     attendance = Attendance(employee_id, employee.first_name, employee.last_name, employee.email, employee.salary, date, in_time, out_time)
         
-        # Store multiple attendance records for each employee
-        if employee_id not in self.attendance_records:
-            self.attendance_records[employee_id] = []
-        self.attendance_records[employee_id].append(attendance)
+    #     # Store multiple attendance records for each employee
+    #     if employee_id not in self.attendance_records:
+    #         self.attendance_records[employee_id] = []
+    #     self.attendance_records[employee_id].append(attendance)
 
     def display_attendance_for_employees(self, employee_id):
         if employee_id not in self.attendance_records:
