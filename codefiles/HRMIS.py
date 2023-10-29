@@ -66,11 +66,11 @@ class HRMIS:
     #     else:
     #         print(f"No salary record found for employee ID: {employee_id}")
 
-    def display_employee_info(self, employee_id):
-        if employee_id in self.employees:
-            self.employees[employee_id].display_employee_info()
-        else:
-            print(f"No employee found with ID: {employee_id}")
+    # def display_employee_info(self, employee_id):
+    #     if employee_id in self.employees:
+    #         self.employees[employee_id].display_employee_info()
+    #     else:
+    #         print(f"No employee found with ID: {employee_id}")
 
     def display_employee_attendance(self, employee_id, date):
         key = (employee_id, date)
@@ -205,25 +205,25 @@ class HRMIS:
         with open('salaries.pkl', 'wb') as f:
             pickle.dump(self.salaries, f)
 
-    # Load data from files
-    def load_data(self):
-        try:
-            with open('employees.pkl', 'rb') as f:
-                self.employees = pickle.load(f)
-        except FileNotFoundError:
-            self.employees = {}
+    # # Load data from files
+    # def load_data(self):
+    #     try:
+    #         with open('employees.pkl', 'rb') as f:
+    #             self.employees = pickle.load(f)
+    #     except FileNotFoundError:
+    #         self.employees = {}
 
-        try:
-            with open('attendance_records.pkl', 'rb') as f:
-                self.attendance_records = pickle.load(f)
-        except FileNotFoundError:
-            self.attendance_records = {}
+    #     try:
+    #         with open('attendance_records.pkl', 'rb') as f:
+    #             self.attendance_records = pickle.load(f)
+    #     except FileNotFoundError:
+    #         self.attendance_records = {}
 
-        try:
-            with open('salaries.pkl', 'rb') as f:
-                self.salaries = pickle.load(f)
-        except FileNotFoundError:
-            self.salaries = {}
+    #     try:
+    #         with open('salaries.pkl', 'rb') as f:
+    #             self.salaries = pickle.load(f)
+    #     except FileNotFoundError:
+    #         self.salaries = {}
 
     def generate_pay_slip(self, employee_id, month_year):
         # Assuming month_year is in the format 'YYYY-MM'
@@ -263,9 +263,9 @@ class HRMIS:
 # hr_system.delete_employee(101)
 # hr_system.display_employee_info(101)  # This should now say the employee is not found
 
-hr_system = HRMIS()
-hr_system.add_employee(101, 'John', 'Doe', 'john@example.com', 50000)  # Add an employee
-hr_system.update_employee(101, first_name='Jonathan', email='jonathan@example.com')  # Update employee details
-hr_system.display_employee_info(101)
-hr_system.delete_employee(101)
-hr_system.display_employee_info(101)  # This should now say the employee is not found
+# hr_system = HRMIS()
+# hr_system.add_employee(101, 'John', 'Doe', 'john@example.com', 50000)  # Add an employee
+# hr_system.update_employee(101, first_name='Jonathan', email='jonathan@example.com')  # Update employee details
+# hr_system.display_employee_info(101)
+# hr_system.delete_employee(101)
+# hr_system.display_employee_info(101)  # This should now say the employee is not found
