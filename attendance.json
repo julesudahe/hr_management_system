@@ -9,7 +9,7 @@
                 "in_time": "09:30",
                 "is_late": true,
                 "out_time": "17:15",
-                "is_early_departure": false
+                "is_early_departure": true
             }
         ]
     },

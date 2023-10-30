@@ -23,9 +23,8 @@ class Employee:
 
     # Variable to store informations
     all_employees = {}
-    __last_employee_id = 0
 
-    def __init__(self, first_name, last_name, employee_gender, salary, job_title, level, team = None, department=None, internship_duration=None):
+    def __init__(self, first_name, last_name, employee_id, employee_gender, salary, job_title, level, team = None, department=None, internship_duration=None):
         """Initializing the attributes of this class"""
         if not first_name or not last_name or not employee_gender or salary < 0:
             raise ValueError("Invalid input for employee attributes.")
@@ -57,7 +56,7 @@ class Employee:
         self._employee_gender = employee_gender
         self._email = self.generate_email(first_name, last_name)
         self.__salary = salary
-        self.__employee_id = self.generate_employee_id()
+        self.__employee_id = employee_id
         self.job_title = job_title
         self.level = level
         self.team = team
@@ -77,14 +76,7 @@ class Employee:
         }
 
         # Automatically store data to JSON
-        Employee.store_employees_to_json(self.all_employees)
-
-    @classmethod
-    def generate_employee_id(cls):
-        """Generate automatically the employee ID"""
-        employee_id = f"CMUID{cls.__last_employee_id + 1:04}"
-        cls.__last_employee_id += 1
-        return employee_id
+        # Employee.store_employees_to_json(self.all_employees)
 
     @staticmethod
     def generate_email(first_name, last_name):
@@ -93,19 +85,24 @@ class Employee:
     
     @staticmethod
     def store_employees_to_json(new_employee_data):
-        """Store all employee data as a JSON array to an existing JSON file."""
-
+        """Append new employee data to an existing JSON file if employee ID is not present."""
         try:
+            # Load existing data from the JSON file
             with open("employees.json", "r", encoding="utf-8") as existing_file:
                 existing_data = json.load(existing_file)
         except FileNotFoundError:
+            # If the file doesn't exist, create an empty list
             existing_data = []
 
-        # Merge existing data with new data
-        for employee_id, employee_info in new_employee_data.items():
-            if employee_id not in existing_data:
-                existing_data.append({employee_id: employee_info})
+        # Check if employee ID already exists in the file
+        for employee_id, _ in new_employee_data.items():
+            if employee_id in (data.keys() for data in existing_data):
+                raise ValueError(f"Employee with ID {employee_id} already exists in the JSON file.")
         
+        # Append new employee data to the existing data
+        existing_data.append(new_employee_data)
+
+        # Write the updated data back to the JSON file
         with open("employees.json", "w", encoding="utf-8") as updated_file:
             json.dump(existing_data, updated_file, indent=4)
 
@@ -129,16 +126,9 @@ class Employee:
         """Getter for gender"""
         return self._employee_gender
 
-employee1 = Employee("John", "Doe", "Male", 50000, "Software Developer", "Employee", "Development", "Backend")
-employee2 = Employee("Alice", "Smith", "Female", 55000, "Project Manager", "Manager", "Project Management", "Project A")
-employee3 = Employee("Eva", "Johnson", "Female", 60000, "Director", "Director", None, "Development")
+employee1 = Employee("John", "Doe", 1, "Male", 50000, "Software Developer", "Employee", "Development", "Backend")
+# employee2 = Employee("Alice", "Smith", 2, "Female", 55000, "Project Manager", "Manager", "Project Management", "Project A")
+# employee3 = Employee("Eva", "Johnson", 3, "Female", 60000, "Director", "Director", None, "Development")
 
-# # Accessing employee information
-# print(employee1.get_full_name())  # Output: John Doe
-# print(employee1.get_email())  # Output: john.doe@andrew.cmu.edu
-# print(employee1.get_salary())  # Output: 50000
-# print(employee1.get_employee_id())  # Output: CMUID0001
-# print(employee1.get_gender())  # Output: Male
-
-# Storing employees' data to JSON file
-# employee1.store_employees_to_json(employee1.all_employees)
+# Call the method to store employees in the JSON file
+Employee.store_employees_to_json(Employee.all_employees)
