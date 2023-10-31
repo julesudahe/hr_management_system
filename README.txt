@@ -1,9 +1,9 @@
 Introduction
 ---------------------------------------------------------------------------------
 
-This is a python a Human Resource Management Information System (HRMIS). 
-The HRMIS should efficiently manage employee records, track attendance, calculate salaries, and provide basic reporting 
-capabilities using object-oriented programming (OOP) principles
+This is a python a Human Resource Management Information System (HRMIS). The HRMIS should
+efficiently manage employee records, track attendance, calculate salaries, and provide basic 
+reporting capabilities using object-oriented programming (OOP) principles
 
 Explaining the Inheritance Hierarchy
 ---------------------------------------------------------------------------------
@@ -11,36 +11,43 @@ Explaining the Inheritance Hierarchy
 Employee Class
 ---------------------------------------------------------------------------------
 Attributes: first_name, last_name, employee_id, employee_gender, salary, job_title, level, team , department, internship_duration
-We have ways of validating the employee inputs
-We have a methods which generate Email automatically using employee names.
-We have setter and getter methods to access employee information.
-We have a method to save employee information in the JSON file as a dara persistence mechanism
+Validation: We have ways of validating the employee inputs
+Methods:
+    - We have a methods which generate Email automatically using employee names.
+    - We have setter and getter methods to access employee information.
+    - We have a method to save employee information in the JSON file as a dara persistence mechanism
 
 Salary Class(inherit Desirializer)
 ---------------------------------------------------------------------------------
 Attributes: deductions, allowance, bonus 
-We have ways of validating that the salary must be number
-We have a methods which stores salary information for a respective employee_ID into a JSON format
-We have getter methods to access employee salary information.
-We have a method to calculate employee salary from base salary 
-We have a method to display employee salary breakdown
+Validation: We have ways of validating that the salary must be number
+Methods:
+    - We have a methods which stores salary information for a respective employee_ID into a JSON format
+    - We have getter methods to access employee salary information.
+    - We have a method to calculate employee salary from base salary 
+    - We have a method to display employee salary breakdown
 
 Attendance Class(inherit Desirializer class)
 ---------------------------------------------------------------------------------
 Attributes: attendance_records (as a dictionary)
-We have methods to record in and out time for employee, both methods accepts dates, in-time and out-time 
-We have a methods which stores employee attendance information for a respective employee_ID into a JSON format
+Validation: None
+Methods:
+    - We have methods to record in and out time for employee, both methods accepts dates, in-time and out-time 
+    - We have a methods which stores employee attendance information for a respective employee_ID into a JSON format
 
 Desirializer Class
 ---------------------------------------------------------------------------------
 Attributes: No attributes
-We have methods to allow Salary, attendance and employee class read from JSON files 
+Validation: None
+Methods:
+    - We have methods to allow Salary, attendance and employee class read from JSON files 
 
 Employee_management Class (Inherits from all other classes)
 ---------------------------------------------------------------------------------
 Attributes: employees
-Methods Used:
-    1. _save_to_json: A function to save employee data to JSON
+Validation: None
+Methods:
+    1. _save_to_json: A function to save employee data to JSON (employee.json)
         Attributes: employee_data
 
     2. add_employee: use Employee class object to add a new employee
@@ -83,5 +90,10 @@ Methods Used:
 
 Tester File
 ---------------------------------------------------------------------------------
-The tester file inheit from Employee_management classes and run a number of operations to test 
-the code against different scenarios. 
+Attributes: None
+Validation: None
+Methods: None
+
+Explaining: 
+    - The tester file inheit from Employee_management classes and run a number of operations to test 
+    the code against different scenarios. 

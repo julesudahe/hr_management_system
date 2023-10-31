@@ -50,7 +50,10 @@ class EmployeeManagement:
         updated_existing = False
 
         while True:
-            employee_id = input("Enter the Employee ID to update: ")
+            employee_id = input("Enter the Employee ID to update (or X to quit): ")
+            
+            if employee_id == "X": #condition to stop the system from running unending loop
+                break
 
             # Check if the entered employee_id exists in the data
             if any(employee_id in entry for entry in existing_data):
