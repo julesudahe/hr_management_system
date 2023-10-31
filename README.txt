@@ -16,7 +16,7 @@ We have a methods which generate Email automatically using employee names.
 We have setter and getter methods to access employee information.
 We have a method to save employee information in the JSON file as a dara persistence mechanism
 
-Salary Class
+Salary Class(inherit Desirializer)
 ---------------------------------------------------------------------------------
 Attributes: deductions, allowance, bonus 
 We have ways of validating that the salary must be number
@@ -25,7 +25,7 @@ We have getter methods to access employee salary information.
 We have a method to calculate employee salary from base salary 
 We have a method to display employee salary breakdown
 
-Attendance Class
+Attendance Class(inherit Desirializer class)
 ---------------------------------------------------------------------------------
 Attributes: attendance_records (as a dictionary)
 We have methods to record in and out time for employee, both methods accepts dates, in-time and out-time 
