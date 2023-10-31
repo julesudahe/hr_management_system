@@ -50,7 +50,7 @@ class Employee:
         self._first_name = first_name
         self._last_name = last_name
         self._employee_gender = employee_gender
-        self._email = self.generate_email(first_name, last_name)
+        self._email = self.generate_email()
         self.__salary = salary
         self.__employee_id = employee_id
         self.job_title = job_title
@@ -71,10 +71,9 @@ class Employee:
             "intern_duration_months": self.internship_duration
         }
 
-    @staticmethod
-    def generate_email(first_name, last_name):
+    def generate_email(self):
         """Generate automatically the email based on first name and last name"""
-        return f"{first_name.lower()}.{last_name.lower()}@andrew.cmu.edu"
+        return f"{self._first_name.lower()}.{self._last_name.lower()}@andrew.cmu.edu"
     
     @staticmethod
     def store_employees_to_json(new_employee_data):
