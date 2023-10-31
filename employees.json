@@ -1,0 +1,15 @@
+[
+    {
+        "4": {
+            "full_name": "Jules Julius",
+            "email": "jules.julius@andrew.cmu.edu",
+            "job_title": "Software Developer",
+            "level": "Employee",
+            "gender": "Male",
+            "salary": 50000,
+            "department": "Backend",
+            "team": "Development",
+            "intern_duration_months": null
+        }
+    }
+]

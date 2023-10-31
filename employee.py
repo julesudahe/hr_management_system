@@ -16,16 +16,15 @@ class Employee:
         job_title (str): The job title of the employee (Director, Intern, Manager).
         department (str): The department for the employee (specific to Managers and Directors).
         internship_duration (int): The duration of the intern's internship in months (specific to Interns).
-
-    Methods:
-        show_employee_info(): Displays the information of the employee.
     """
 
     # Variable to store informations
     all_employees = {}
 
     def __init__(self, first_name, last_name, employee_id, employee_gender, salary, job_title, level, team = None, department=None, internship_duration=None):
-        """Initializing the attributes of this class"""
+        """Initializing the attributes of this class, but we add some condition
+        to make sure that users are entering correct informations"""
+        
         if not first_name or not last_name or not employee_gender or salary < 0:
             raise ValueError("Invalid input for employee attributes.")
         
@@ -46,10 +45,7 @@ class Employee:
                 raise ValueError("Department is required for Directors.")
             team = None
         else:
-            # If not an intern, internship_duration should be None
-            internship_duration = None
-        
-        
+            internship_duration = None # If not an intern, internship_duration should be None
         
         self._first_name = first_name
         self._last_name = last_name
@@ -85,7 +81,7 @@ class Employee:
         """Append new employee data to an existing JSON file if employee ID is not present."""
         try:
             # Load existing data from the JSON file
-            with open("employees.json", "r", encoding="utf-8") as existing_file:
+            with open("1. employees.json", "r", encoding="utf-8") as existing_file:
                 existing_data = json.load(existing_file)
         except FileNotFoundError:
             # If the file doesn't exist, create an empty list
@@ -105,11 +101,11 @@ class Employee:
         existing_data.append(new_employee_data)
         
         # Write the updated data back to the JSON file
-        with open("employees.json", "w", encoding="utf-8") as updated_file:
+        with open("1. employees.json", "w", encoding="utf-8") as updated_file:
             json.dump(existing_data, updated_file, indent=4)
 
     def get_full_name(self):
-        """Getter to combine the first and last name"""
+        """Getter for full employee name by combining the first and last name"""
         return self._first_name + " " + self._last_name
 
     def get_email(self):

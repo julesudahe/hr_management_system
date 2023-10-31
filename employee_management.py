@@ -16,7 +16,7 @@ class EmployeeManagement:
 
     def _save_to_json(self, employee_data):
         """Save the employee data to the JSON file."""
-        with open("employees.json", "w", encoding="utf-8") as json_file:
+        with open("1. employees.json", "w", encoding="utf-8") as json_file:
             json.dump(employee_data, json_file, indent=4)
     
     def add_employee(self, first_name, last_name, serial_id, employee_gender, salary, job_title, level, team=None, department=None, internship_duration=None):
@@ -102,7 +102,7 @@ class EmployeeManagement:
                     break
 
         if employee_found:
-            with open("attendance.json", "w", encoding="utf-8") as updated_file:
+            with open("2. attendance.json", "w", encoding="utf-8") as updated_file:
                 json.dump(existing_data, updated_file, indent=4)
         else:
             print(f"Employee with ID {employee_id} not found in attendance records for the given date.")
@@ -305,7 +305,7 @@ class EmployeeManagement:
             payslip_content += "Net Pay: $" + str(net_pay) + "\n"
 
             # Save payslip to text file
-            payslip_filename = f"{employee_id}.txt"
+            payslip_filename = f"4. {full_name}.txt"
             with open(payslip_filename, "w", encoding="utf-8") as payslip_file:
                 payslip_file.write(payslip_content)
 

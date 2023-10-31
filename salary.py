@@ -1,24 +1,21 @@
 """AndrewID: judahemu & Jeannette"""
 
-# Importing the Employee class from employee.py file (saved in the path as this file)
-# import os
 import json
 import datetime
 from deserializer import DataDeserializer
 
 class Salary:
     """
-    This class import all attributes Employee class.
-    We introduce new attributes: deductiopns, allowance, and bonus.
+    We have three attributes for this class: deductiopns, allowance, and bonus.
+        - deductions (float): deductions like taxes, pension contribution, student loan, etc.
+        - allowance (float): allowance like housing, transports, etc.
+        - bonus (float): different type bonuses
 
     We have different methods that we are using for salary calculations.
-        - getters: this are the getters for our private attributes.
-        - calculate_earnings: methods to calculate earning for based on job level.
-        - calculate_employee_salary: calculating yearly salary for employee.
-        - calculate_monthly_salary: calculating monthly salary for employee.
+        - store_salary_to_json: methods to save calculated monthtly breakdown in json.
+        - calculate_employee_salary: calculating monthly salary for employee.
+        - getters: we are using getters for private attributes. 
     """
-## handling missing employee_id
-# different rate depending to the level
 
     def __init__(self, deductions = 0.0, allowance = 0.0, bonus = 0.0):
         """Initializing the attributes of this class"""
@@ -59,7 +56,7 @@ class Salary:
                 }
                 salary_results[employee_id] = result_dict
 
-        with open("salary.json", "w", encoding="utf-8") as json_file:
+        with open("3. salary.json", "w", encoding="utf-8") as json_file:
             json.dump(salary_results, json_file, indent=4)
 
     def calculate_monthly_salary(self, salary):
@@ -94,7 +91,7 @@ class Salary:
 
     def display_salary_breakdown(self, employee_id):
         """Display the calculated salary breakdown for the specified employee ID."""
-        with open("salary.json", "r", encoding="utf-8") as json_file:
+        with open("3. salary.json", "r", encoding="utf-8") as json_file:
             salary_data = json.load(json_file)
 
         if employee_id in salary_data:
