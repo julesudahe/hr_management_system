@@ -3,7 +3,8 @@
 import json
 from datetime import datetime, time
 from deserializer import DataDeserializer
- # add name, team
+
+
 class Attendance:
     """
     This class imports employee data and provides methods to record
