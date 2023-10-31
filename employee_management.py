@@ -47,28 +47,40 @@ class EmployeeManagement:
         data_deserializer = DataDeserializer()
         existing_data = data_deserializer.deserialize_employees_from_json()
 
-        employee_id = input("Enter the Employee ID to update: ")
+        updated_existing = False
 
-        for entry in existing_data:
-            if employee_id in entry:
-                employee_data = entry[employee_id]
-                print(f"Current Information for Employee ID {employee_id}:")
-                print(employee_data)
+        while True:
+            employee_id = input("Enter the Employee ID to update: ")
 
-                field_to_update = input("Enter the field to update: ").strip().lower()
-                new_value = input(f"Enter the new value for {field_to_update}: ")
+            # Check if the entered employee_id exists in the data
+            if any(employee_id in entry for entry in existing_data):
+                for entry in existing_data:
+                    if employee_id in entry:
+                        employee_data = entry[employee_id]
+                        print(f"Current Information for Employee ID {employee_id}:")
+                        print(employee_data)
 
-                employee_data[field_to_update] = new_value
+                        field_to_update = input("Enter the field to update: ").strip().lower()
 
-                updated_existing = True
-                break
+                        # Validate if the field to update exists in employee_data
+                        if field_to_update in employee_data:
+                            new_value = input(f"Enter the new value for {field_to_update}: ")
+                            employee_data[field_to_update] = new_value
+                            updated_existing = True
+                        else:
+                            print(f"Invalid field: {field_to_update}. Please enter a valid field name.")
 
-        self._save_to_json(existing_data)
-        
-        if not updated_existing:
-            print(f"No employee found with ID: {employee_id}")
+                        break
+            else:
+                print(f"Invalid Employee ID: {employee_id}. Please enter a valid Employee ID.")
+                continue
 
-        return existing_data
+            self._save_to_json(existing_data)
+
+            if not updated_existing:
+                print(f"No employee found with ID: {employee_id}")
+
+            return existing_data
 
     def calculate_salary_for_employee_all(self):
         """Create an Employee object and add it to the employees dictionary"""

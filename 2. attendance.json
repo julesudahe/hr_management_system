@@ -1,0 +1,16 @@
+[
+    {
+        "4": [
+            {
+                "employee_id": "4",
+                "full_name": "Jules Julius",
+                "team": "Development",
+                "date": "2023-10-31",
+                "in_time": "10:45",
+                "is_late": true,
+                "out_time": "11:15",
+                "is_early_departure": true
+            }
+        ]
+    }
+]
