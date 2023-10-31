@@ -1,4 +1,4 @@
-"""AndrewID: judahemu & Jeannette"""
+"""AndrewID: judahemu & Juwizeyi"""
 
 from employee_management import EmployeeManagement
 
@@ -13,8 +13,8 @@ record_attendance.delete_employee("2")
 
 
 # Record in time and out time for an employee
-record_attendance.hr_record_in_time("4", "2023-10-31", "09:00")
-record_attendance.hr_record_out_time("4", "2023-10-31", "18:00")
+record_attendance.hr_record_in_time("4", "2023-10-31", "10:45")
+record_attendance.hr_record_out_time("4", "2023-10-31", "11:15")
 
 # Generate attendance summary report for a specific time period
 start_date = "2023-10-01"
