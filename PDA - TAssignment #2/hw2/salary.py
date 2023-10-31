@@ -113,7 +113,7 @@ class Salary:
             print(f"No salary information found for Employee ID: {employee_id}")
 
 
-salary_instances = Salary(deductions=10, allowance=20, bonus=2)
+# salary_instances = Salary(deductions=10, allowance=20, bonus=2)
 # employee_id_to_display = "CMUID0001"
 # salary_instances.display_salary_breakdown(employee_id_to_display)
 

@@ -5,9 +5,6 @@ from datetime import datetime, time
 from employee import Employee
 from deserializer import DataDeserializer
 from attendance import Attendance
-# from tabulate import tabulate
-
-# from salary import Salary
 
 class EmployeeManagement:
     """Initialize empty dictionaries to store employee objects, attendance, and salary information"""
@@ -311,7 +308,7 @@ record_attendance = EmployeeManagement()
 # employee_id_to_generate_payslip = "Development"
 # month_year_to_generate_payslip = "10-2023"  # Example month-year format: MM-YYYY
 
-# month_years = "2023-10"
+month_years = "2023-10"
 
 # record_attendance.show_team_attendance_info(employee_id_to_generate_payslip)
 
@@ -327,4 +324,7 @@ end_dates = "2023-10-31"
 # # Generate and display the attendance summary report for the specified time period
 # record_attendance.generate_attendance_summary_report(start_dates, end_dates)
 # iddd = '1'
-record_attendance.generate_attendance_summary_report(start_dates, end_dates)
+# record_attendance.generate_attendance_summary_report(start_dates, end_dates)
+
+
+record_attendance.generate_and_save_payslip('1', month_years)

@@ -126,9 +126,9 @@ class Employee:
         """Getter for gender"""
         return self._employee_gender
 
-employee1 = Employee("John", "Doe", 1, "Male", 50000, "Software Developer", "Employee", "Development", "Backend")
+# employee1 = Employee("John", "Doe", 1, "Male", 50000, "Software Developer", "Employee", "Development", "Backend")
 # employee2 = Employee("Alice", "Smith", 2, "Female", 55000, "Project Manager", "Manager", "Project Management", "Project A")
 # employee3 = Employee("Eva", "Johnson", 3, "Female", 60000, "Director", "Director", None, "Development")
 
-# Call the method to store employees in the JSON file
-Employee.store_employees_to_json(Employee.all_employees)
+# # Call the method to store employees in the JSON file
+# Employee.store_employees_to_json(Employee.all_employees)

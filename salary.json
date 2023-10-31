@@ -1,29 +1,11 @@
 {
-    "CMUID0001": {
-        "employee_id": "CMUID0001",
+    "1": {
+        "employee_id": "1",
         "full_name": "John Doe",
         "base_salary_monthly": 4166.67,
-        "allowance_monthly": 208.33,
+        "allowance_monthly": 833.33,
         "bonus_monthly": 83.33,
         "deductions_monthly": 416.67,
-        "net_pay_monthly": 4041.67
-    },
-    "CMUID0002": {
-        "employee_id": "CMUID0002",
-        "full_name": "Alice Smith",
-        "base_salary_monthly": 4583.33,
-        "allowance_monthly": 229.17,
-        "bonus_monthly": 91.67,
-        "deductions_monthly": 458.33,
-        "net_pay_monthly": 4445.83
-    },
-    "CMUID0003": {
-        "employee_id": "CMUID0003",
-        "full_name": "Eva Johnson",
-        "base_salary_monthly": 5000.0,
-        "allowance_monthly": 250.0,
-        "bonus_monthly": 100.0,
-        "deductions_monthly": 500.0,
-        "net_pay_monthly": 4850.0
+        "net_pay_monthly": 4666.67
     }
 }

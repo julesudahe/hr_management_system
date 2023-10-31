@@ -10,31 +10,27 @@
             "department": "Backend",
             "team": "Development",
             "intern_duration_months": null
-        }
-    },
-    {
-        "1": {
-            "full_name": "John Doe",
-            "email": "john.doe@andrew.cmu.edu",
-            "job_title": "Software Developer",
-            "level": "Employee",
-            "gender": "Male",
-            "salary": 50000,
-            "department": "Backend",
-            "team": "Development",
+        },
+        "2": {
+            "full_name": "Alice Smith",
+            "email": "alice.smith@andrew.cmu.edu",
+            "job_title": "Project Manager",
+            "level": "Manager",
+            "gender": "Female",
+            "salary": 55000,
+            "department": "Project A",
+            "team": "Project Management",
             "intern_duration_months": null
-        }
-    },
-    {
-        "1": {
-            "full_name": "John Doe",
-            "email": "john.doe@andrew.cmu.edu",
-            "job_title": "Software Developer",
-            "level": "Employee",
-            "gender": "Male",
-            "salary": 50000,
-            "department": "Backend",
-            "team": "Development",
+        },
+        "3": {
+            "full_name": "Eva Johnson",
+            "email": "eva.johnson@andrew.cmu.edu",
+            "job_title": "Director",
+            "level": "Director",
+            "gender": "Female",
+            "salary": 60000,
+            "department": "Development",
+            "team": null,
             "intern_duration_months": null
         }
     }
