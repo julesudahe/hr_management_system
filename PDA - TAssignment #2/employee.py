@@ -75,9 +75,6 @@ class Employee:
             "intern_duration_months": self.internship_duration
         }
 
-        # Automatically store data to JSON
-        # Employee.store_employees_to_json(self.all_employees)
-
     @staticmethod
     def generate_email(first_name, last_name):
         """Generate automatically the email based on first name and last name"""
@@ -94,14 +91,19 @@ class Employee:
             # If the file doesn't exist, create an empty list
             existing_data = []
 
+        existing_employee_ids = []
         # Check if employee ID already exists in the file
-        for employee_id, _ in new_employee_data.items():
-            if employee_id in (data.keys() for data in existing_data):
-                raise ValueError(f"Employee with ID {employee_id} already exists in the JSON file.")
+        for employee_info in existing_data:
+            for existing_employee_id, _ in list(employee_info.items()):
+                existing_employee_ids.append(existing_employee_id)
+        
+        for new_employee_id, _ in list(new_employee_data.items()):
+            if new_employee_id in existing_employee_ids:
+                raise ValueError(f"EmployeeID {new_employee_id} already exists.")
         
         # Append new employee data to the existing data
         existing_data.append(new_employee_data)
-
+        
         # Write the updated data back to the JSON file
         with open("employees.json", "w", encoding="utf-8") as updated_file:
             json.dump(existing_data, updated_file, indent=4)
@@ -125,10 +127,3 @@ class Employee:
     def get_gender(self):
         """Getter for gender"""
         return self._employee_gender
-
-# employee1 = Employee("John", "Doe", 1, "Male", 50000, "Software Developer", "Employee", "Development", "Backend")
-# employee2 = Employee("Alice", "Smith", 2, "Female", 55000, "Project Manager", "Manager", "Project Management", "Project A")
-# employee3 = Employee("Eva", "Johnson", 3, "Female", 60000, "Director", "Director", None, "Development")
-
-# # Call the method to store employees in the JSON file
-# Employee.store_employees_to_json(Employee.all_employees)

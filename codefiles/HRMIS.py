@@ -115,13 +115,13 @@ class HRMIS:
     #         self.attendance_records[employee_id] = []
     #     self.attendance_records[employee_id].append(attendance)
 
-    def display_attendance_for_employees(self, employee_id):
-        if employee_id not in self.attendance_records:
-            print(f"No attendance records found for employee ID: {employee_id}")
-            return
+    # def display_attendance_for_employees(self, employee_id):
+    #     if employee_id not in self.attendance_records:
+    #         print(f"No attendance records found for employee ID: {employee_id}")
+    #         return
 
-        for attendance in self.attendance_records[employee_id]:
-            attendance.display_attendance()
+    #     for attendance in self.attendance_records[employee_id]:
+    #         attendance.display_attendance()
 
     def display_attendance_for_all_employees(self):
         for employee_id, attendances in self.attendance_records.items():
@@ -129,23 +129,23 @@ class HRMIS:
             for attendance in attendances:
                 attendance.display_attendance()
 
-    def calculate_total_working_hours(self, employee_id, start_date=None, end_date=None):
-        if employee_id not in self.attendance_records:
-            print(f"No attendance records found for employee ID: {employee_id}")
-            return
+    # def calculate_total_working_hours(self, employee_id, start_date=None, end_date=None):
+    #     if employee_id not in self.attendance_records:
+    #         print(f"No attendance records found for employee ID: {employee_id}")
+    #         return
 
-        total_hours = 0
-        total_minutes = 0
-        for attendance in self.attendance_records[employee_id]:
-            if (start_date and attendance.date < start_date) or (end_date and attendance.date > end_date):
-                continue  # Skip attendance records outside the date range
-            hours, minutes = map(int, attendance.duration().split()[:2:2])  # split 'X hours, Y minutes' and take X and Y
-            total_hours += hours
-            total_minutes += minutes
-            total_hours += total_minutes // 60  # Convert every 60 minutes into 1 hour
-            total_minutes %= 60
+    #     total_hours = 0
+    #     total_minutes = 0
+    #     for attendance in self.attendance_records[employee_id]:
+    #         if (start_date and attendance.date < start_date) or (end_date and attendance.date > end_date):
+    #             continue  # Skip attendance records outside the date range
+    #         hours, minutes = map(int, attendance.duration().split()[:2:2])  # split 'X hours, Y minutes' and take X and Y
+    #         total_hours += hours
+    #         total_minutes += minutes
+    #         total_hours += total_minutes // 60  # Convert every 60 minutes into 1 hour
+    #         total_minutes %= 60
 
-        return f"{total_hours} hours, {total_minutes} minutes"
+    #     return f"{total_hours} hours, {total_minutes} minutes"
     
     
     def generate_employee_list_report(self):
@@ -155,26 +155,26 @@ class HRMIS:
             employee.display_employee_info()
             print("----------------------------------")
 
-    def generate_attendance_summary_report(self, month_year):
-        # Assuming month_year is in the format 'YYYY-MM'
-        print(f"Attendance Summary Report for {month_year}:")
-        print("============================================")
-        for employee_id, attendances in self.attendance_records.items():
-            filtered_attendances = [a for a in attendances if a.date.startswith(month_year)]
-            if filtered_attendances:
-                print(f"Employee ID: {employee_id}")
-                total_hours = 0
-                total_minutes = 0
-                for attendance in filtered_attendances:
-                    attendance.display_attendance()
-                    hours, minutes = map(int, attendance.duration().split()[:2:2])
-                    total_hours += hours
-                    total_minutes += minutes
+    # def generate_attendance_summary_report(self, month_year):
+    #     # Assuming month_year is in the format 'YYYY-MM'
+    #     print(f"Attendance Summary Report for {month_year}:")
+    #     print("============================================")
+    #     for employee_id, attendances in self.attendance_records.items():
+    #         filtered_attendances = [a for a in attendances if a.date.startswith(month_year)]
+    #         if filtered_attendances:
+    #             print(f"Employee ID: {employee_id}")
+    #             total_hours = 0
+    #             total_minutes = 0
+    #             for attendance in filtered_attendances:
+    #                 attendance.display_attendance()
+    #                 hours, minutes = map(int, attendance.duration().split()[:2:2])
+    #                 total_hours += hours
+    #                 total_minutes += minutes
 
-                total_hours += total_minutes // 60
-                total_minutes %= 60
-                print(f"Total hours worked in {month_year}: {total_hours} hours, {total_minutes} minutes")
-                print("----------------------------------")
+    #             total_hours += total_minutes // 60
+    #             total_minutes %= 60
+    #             print(f"Total hours worked in {month_year}: {total_hours} hours, {total_minutes} minutes")
+    #             print("----------------------------------")
 
     def generate_salary_summary_report(self, month_year):
         # Assuming month_year is in the format 'YYYY-MM'

@@ -3,6 +3,7 @@
 # Importing the Employee class from employee.py file (saved in the path as this file)
 # import os
 import json
+import datetime
 from deserializer import DataDeserializer
 
 class Salary:
@@ -17,8 +18,7 @@ class Salary:
         - calculate_monthly_salary: calculating monthly salary for employee.
     """
 ## handling missing employee_id
-## handling intern salary
-## error message when json for employee is empty or missing.
+# different rate depending to the level
 
     def __init__(self, deductions = 0.0, allowance = 0.0, bonus = 0.0):
         """Initializing the attributes of this class"""
@@ -34,26 +34,30 @@ class Salary:
     
     def store_salary_to_json(self):
         """Calculate and store monthly salary data to a JSON file."""
-        employee_data = DataDeserializer().deserialize_employees_from_json()
+        employee_data_list = DataDeserializer().deserialize_employees_from_json()
         salary_results = {}
+        current_month = datetime.datetime.now().strftime("%B %Y")
 
-        for employee_dict in employee_data:
-            employee_id, employee_info = list(employee_dict.items())[0]
-            full_name = employee_info.get("full_name")
-            employee_salary = employee_info.get("salary")
+        for employee_info in employee_data_list:
+            for employee_id, employee_data in list(employee_info.items()):
+                full_name = employee_data.get("full_name")
+                employee_salary = employee_data.get("salary")
+                level = employee_data.get("level")
 
-            monthly_breakdown = self.calculate_monthly_salary(employee_salary)
-            
-            result_dict = {
-                'employee_id': employee_id,
-                'full_name': full_name,
-                'base_salary_monthly': round(monthly_breakdown['base_salary_monthly'], 2),
-                'allowance_monthly': round(monthly_breakdown['allowance_monthly'], 2),
-                'bonus_monthly': round(monthly_breakdown['bonus_monthly'], 2),
-                'deductions_monthly': round(monthly_breakdown['deductions_monthly'], 2),
-                'net_pay_monthly': round(monthly_breakdown['net_pay_monthly'], 2)
-            }
-            salary_results[employee_id] = result_dict
+                monthly_breakdown = self.calculate_monthly_salary(employee_salary)
+
+                result_dict = {
+                    'employee_id': employee_id,
+                    'full_name': full_name,
+                    'level': level,
+                    'base_salary_monthly': round(monthly_breakdown['base_salary_monthly'], 2),
+                    'allowance_monthly': round(monthly_breakdown['allowance_monthly'], 2),
+                    'bonus_monthly': round(monthly_breakdown['bonus_monthly'], 2),
+                    'deductions_monthly': round(monthly_breakdown['deductions_monthly'], 2),
+                    'net_pay_monthly': round(monthly_breakdown['net_pay_monthly'], 2),
+                    'current_month': current_month
+                }
+                salary_results[employee_id] = result_dict
 
         with open("salary.json", "w", encoding="utf-8") as json_file:
             json.dump(salary_results, json_file, indent=4)
@@ -111,9 +115,3 @@ class Salary:
             print(f"Net Pay: {net_pay:.2f}")
         else:
             print(f"No salary information found for Employee ID: {employee_id}")
-
-
-# salary_instances = Salary(deductions=10, allowance=20, bonus=2)
-# employee_id_to_display = "CMUID0001"
-# salary_instances.display_salary_breakdown(employee_id_to_display)
-

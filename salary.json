@@ -1,11 +1,1 @@
-{
-    "1": {
-        "employee_id": "1",
-        "full_name": "John Doe",
-        "base_salary_monthly": 4166.67,
-        "allowance_monthly": 833.33,
-        "bonus_monthly": 83.33,
-        "deductions_monthly": 416.67,
-        "net_pay_monthly": 4666.67
-    }
-}
+{}

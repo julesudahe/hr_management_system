@@ -5,6 +5,7 @@ from datetime import datetime, time
 from employee import Employee
 from deserializer import DataDeserializer
 from attendance import Attendance
+from salary import Salary
 
 class EmployeeManagement:
     """Initialize empty dictionaries to store employee objects, attendance, and salary information"""
@@ -20,8 +21,13 @@ class EmployeeManagement:
     
     def add_employee(self, first_name, last_name, serial_id, employee_gender, salary, job_title, level, team=None, department=None, internship_duration=None):
         """Create an Employee object and add it to the employees dictionary"""
-        Employee(first_name, last_name, serial_id, employee_gender, salary, job_title, level, team, department, internship_duration)
+        try:
+            Employee(first_name, last_name, serial_id, employee_gender, salary, job_title, level, team, department, internship_duration)
+            Employee.store_employees_to_json(Employee.all_employees)
 
+        except Exception as e:
+            print(e)
+            
     def delete_employee(self, target_employee_id):
         """Delete an employee's information from the JSON file."""
         data_deserializer = DataDeserializer()
@@ -35,7 +41,7 @@ class EmployeeManagement:
             print(f"Employee with ID {target_employee_id} deleted.")
         else:
             print("Employee not found. Available IDs:", [list(record.keys())[0] for record in employee_data])
-    
+
     def update_data(self):
         """Update existing employee data with new data."""
         data_deserializer = DataDeserializer()
@@ -64,6 +70,10 @@ class EmployeeManagement:
 
         return existing_data
 
+    def calculate_salary_for_employee_all(self):
+        """Create an Employee object and add it to the employees dictionary"""
+        Salary(30, 20, 10)
+
     def hr_record_in_time(self, employee_id, date, in_time):
         """Recording attendance"""
         attendance_instance = Attendance()
@@ -74,10 +84,7 @@ class EmployeeManagement:
         """Recording attendance"""
         data_deserializer = DataDeserializer()
         existing_data = data_deserializer.deserialize_attendance_from_json()
-
-        print("Existing Data:", existing_data)
-        # print(existing_data.get('employee_id'))
-
+        
         # Check if the employee_id exists in the attendance data
         employee_found = False
         for record in existing_data:
@@ -110,23 +117,23 @@ class EmployeeManagement:
         print("=" * 110)
 
         for employee_data in attendance_records:
-            employee_id, attendances = next(iter(employee_data.items()))
-            filtered_attendances = [a for a in attendances if start_date <= a['date'] <= end_date]
-            if filtered_attendances:
-                employee_info = filtered_attendances[0]  # Assuming only one set of employee info per period
-                full_name = employee_info['full_name']
-                team = employee_info['team']
+            _, attendances = next(iter(employee_data.items()))
 
-                total_hours = 0
-                total_minutes = 0
-                early_count = 0
-                late_count = 0
+            total_hours = 0
+            total_minutes = 0
+            early_count = 0
+            late_count = 0
 
-                for attendance in filtered_attendances:
-                    in_time = attendance['in_time']
-                    out_time = attendance['out_time']
-                    is_early = attendance['is_late']
-                    is_late = attendance['is_early_departure']
+            for data in attendances:
+                if start_date <= data['date'] <= end_date:
+                    employee_id = data['employee_id']  # Assuming only one set of employee info per period
+                    full_name = data['full_name']
+                    team = data['team']
+                    in_time = data['in_time']
+                    current_time = datetime.now().strftime("%H:%M")
+                    out_time = data['out_time'] if data['out_time'] is not None else current_time
+                    is_early = data['is_late']
+                    is_late = data['is_early_departure']
 
                     # Convert in_time and out_time to datetime objects for easier calculations
                     in_time_obj = datetime.strptime(in_time, "%H:%M")
@@ -141,11 +148,11 @@ class EmployeeManagement:
                     if is_late is True:
                         late_count += 1
 
-                total_hours += total_minutes // 60
-                total_minutes %= 60
+                    total_hours += total_minutes // 60
+                    total_minutes %= 60
 
-                # Print attendance summary in tabular format
-                print(f"{employee_id:<15}{full_name:<25}{team:<20}{total_hours}h {total_minutes:<18}{early_count:<20}{late_count:<20}")
+                    # Print attendance summary in tabular format
+                    print(f"{employee_id:<15}{full_name:<25}{team:<20}{total_hours}h {total_minutes:<18}{early_count:<20}{late_count:<20}")
 
     def show_employee_info(self, employee_id):
         """Display the employee information for the specified employee ID."""
@@ -171,7 +178,7 @@ class EmployeeManagement:
                 print(f"Email: {email}")
                 print(f"Job Title: {job_title}")
                 print(f"Gender: {gender}")
-                print(f"Salary: {salary:.2f}")
+                print(f"Salary: {int(salary):.2f}")
 
                 if level.lower() == "director":
                     print(f"Department: {department}")
@@ -186,7 +193,7 @@ class EmployeeManagement:
         else:
             print(f"No information found for Employee ID: {employee_id}")
 
-    def show_attendance_info(self, employee_id):
+    def show_attendance_info(self, employee_id, date):
         """Display attendance data for the specified employee ID."""
         data_deserializer = DataDeserializer()
         attendance_data = data_deserializer.deserialize_attendance_from_json()
@@ -196,12 +203,15 @@ class EmployeeManagement:
                 attendance_records = record[employee_id]
                 print(f"Attendance records for Employee ID: {employee_id}")
                 for attendance_record in attendance_records:
-                    print(f"Date: {attendance_record['date']}")
-                    print(f"In Time: {attendance_record['in_time']}")
-                    print(f"Is Late: {attendance_record['is_late']}")
-                    print(f"Out Time: {attendance_record['out_time']}")
-                    print(f"Is Early Departure: {attendance_record['is_early_departure']}")
-                    print("-" * 30)
+                    if date == attendance_record['date']:
+                        print(f"Date: {attendance_record['date']}")
+                        print(f"In Time: {attendance_record['in_time']}")
+                        print(f"Is Late: {attendance_record['is_late']}")
+                        print(f"Out Time: {attendance_record['out_time']}")
+                        print(f"Is Early Departure: {attendance_record['is_early_departure']}")
+                        print("-" * 30)
+                    else:
+                        print(f"No attendance records for {employee_id} on this date {date}")
                 break
         else:
             print(f"No attendance records found for Employee ID: {employee_id}")
@@ -233,7 +243,8 @@ class EmployeeManagement:
         """Display the calculated salary breakdown for the specified employee ID."""
         data_deserializer = DataDeserializer()
         salary_data = data_deserializer.deserialize_salary_from_json()
-        
+        self.calculate_salary_for_employee_all()
+
         if employee_id in salary_data:
             employee_info = salary_data[employee_id]
             full_name = employee_info.get("full_name")
@@ -242,8 +253,10 @@ class EmployeeManagement:
             bonus = employee_info.get("bonus_monthly")
             deductions = employee_info.get("deductions_monthly")
             net_pay = employee_info.get("net_pay_monthly")
+            current_month = employee_info.get("current_month")
 
             print(f"Employee ID: {employee_id}")
+            print(f"Month: {current_month}")
             print(f"Full Name: {full_name}")
             print(f"Base Salary: {base_salary:.2f}")
             print(f"Allowance: {allowance:.2f}")
@@ -257,6 +270,7 @@ class EmployeeManagement:
         """Generate and save payslip for the specified employee ID and month-year."""
         data_deserializer = DataDeserializer()
         salary_data = data_deserializer.deserialize_salary_from_json()
+        self.calculate_salary_for_employee_all()
 
         # Validate if the specified employee ID exists in the salary data
         if employee_id in salary_data:
@@ -299,32 +313,3 @@ class EmployeeManagement:
             print(f"Payslip for Employee ID {employee_id} generated and saved to {payslip_filename}.")
         else:
             print(f"No salary information found for Employee ID: {employee_id}")
-
-
-# # Create an instance of EmployeeManagement class
-record_attendance = EmployeeManagement()
-
-# Assuming `record_attendance` is an instance of the `EmployeeManagement` class
-# employee_id_to_generate_payslip = "Development"
-# month_year_to_generate_payslip = "10-2023"  # Example month-year format: MM-YYYY
-
-month_years = "2023-10"
-
-# record_attendance.show_team_attendance_info(employee_id_to_generate_payslip)
-
-# record_attendance.generate_attendance_summary_report(month_years)
-
-# Example usage
-# employee_manager = EmployeeManagement()
-
-# Specify the start and end dates for the attendance summary report (in the format 'YYYY-MM-DD')
-start_dates = "2023-10-01"
-end_dates = "2023-10-31"
-
-# # Generate and display the attendance summary report for the specified time period
-# record_attendance.generate_attendance_summary_report(start_dates, end_dates)
-# iddd = '1'
-# record_attendance.generate_attendance_summary_report(start_dates, end_dates)
-
-
-record_attendance.generate_and_save_payslip('1', month_years)
