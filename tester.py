@@ -4,7 +4,7 @@ from HRMIS import EmployeeManagement
 
 record_attendance = EmployeeManagement()
 
-# Add employees one at the time
+# Add employees
 record_attendance.add_employee("Jules", "Julius", "4", "Male", 50000, "Software Developer", "Employee", team="Development", department="Backend")
 record_attendance.add_employee("Jenny", "Jeannette", "2", "Female", 55000, "Project Manager", "Manager", team="Project Management", department="Project A")
 
@@ -65,10 +65,8 @@ print("*" * 30)
 # Calculate salary for all employees
 record_attendance.calculate_salary_for_employee_all()
 
-# Separator line
+# # Separator line
 print("*" * 30)
 
 # Update employee data
 updated_data = record_attendance.update_data()
-
-"""AndrewID: judahemu & Juwizeyi"""

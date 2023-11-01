@@ -25,7 +25,7 @@ class EmployeeManagement:
             Employee(first_name, last_name, serial_id, employee_gender, salary, job_title, level, team, department, internship_duration)
             Employee.store_employees_to_json(Employee.all_employees)
 
-        except Exception as e:
+        except ValueError as e:
             print(e)
             
     def delete_employee(self, target_employee_id):
@@ -42,6 +42,10 @@ class EmployeeManagement:
         else:
             print("Employee not found. Available IDs:", [list(record.keys())[0] for record in employee_data])
 
+    def get_employee_count(self):
+        """Return the number of employees in the management system"""
+        return len(self.employees)
+    
     def update_data(self):
         """Update existing employee data with new data."""
         data_deserializer = DataDeserializer()
@@ -52,7 +56,7 @@ class EmployeeManagement:
         while True:
             employee_id = input("Enter the Employee ID to update (or X to quit): ")
             
-            if employee_id == "X": #condition to stop the system from running unending loop
+            if employee_id.lower() == "x": #condition to stop the system from running unending loop
                 break
 
             # Check if the entered employee_id exists in the data
@@ -283,10 +287,11 @@ class EmployeeManagement:
     
     def generate_and_save_payslip(self, employee_id, month_year):
         """Generate and save payslip for the specified employee ID and month-year."""
+        
+        self.calculate_salary_for_employee_all()
         data_deserializer = DataDeserializer()
         salary_data = data_deserializer.deserialize_salary_from_json()
-        self.calculate_salary_for_employee_all()
-
+        
         # Validate if the specified employee ID exists in the salary data
         if employee_id in salary_data:
             employee_info = salary_data[employee_id]
@@ -307,17 +312,20 @@ class EmployeeManagement:
                 return
 
             # Create payslip content
-            payslip_content = "Payslip\n"
-            payslip_content += f"Pay Period: {pay_period_start} to {pay_period_end}\n"
-            payslip_content += "Employee ID: " + employee_id + "\n"
-            payslip_content += "Full Name: " + full_name + "\n"
-            payslip_content += "Month/Year: " + month_year + "\n"
-            payslip_content += "---------------------------\n"
-            payslip_content += "Base Salary: $" + str(base_salary) + "\n"
-            payslip_content += "Allowance: $" + str(allowance) + "\n"
-            payslip_content += "Bonus: $" + str(bonus) + "\n"
-            payslip_content += "Deductions: $" + str(deductions) + "\n"
-            payslip_content += "Net Pay: $" + str(net_pay) + "\n"
+            payslip_content = f"{'*' * 30}\n"
+            payslip_content += f"{'Payslip'.center(30)}\n"
+            payslip_content += f"{'*' * 30}\n"
+            payslip_content += f"Pay Period: {pay_period_start.strftime('%Y-%m-%d')} to {pay_period_end.strftime('%Y-%m-%d')}\n"
+            payslip_content += f"Employee ID: {employee_id}\n"
+            payslip_content += f"Full Name: {full_name}\n"
+            payslip_content += f"Month/Year: {month_year}\n"
+            payslip_content += "-" * 30 + "\n"
+            payslip_content += f"Base Salary: ${base_salary:.2f}\n"
+            payslip_content += f"Allowance: ${allowance:.2f}\n"
+            payslip_content += f"Bonus: ${bonus:.2f}\n"
+            payslip_content += f"Deductions: ${deductions:.2f}\n"
+            payslip_content += f"Net Pay: ${net_pay:.2f}\n"
+            payslip_content += f"{'*' * 30}\n"
 
             # Save payslip to text file
             payslip_filename = f"4. {full_name}.txt"

@@ -27,6 +27,9 @@ class Attendance:
         """Record the in-time of the employee"""
         employee_data = DataDeserializer().deserialize_employees_from_json() # Retrieve employee data from the JSON file
     
+        if not employee_id or not date or not in_time:
+            raise ValueError("Invalid EmployeeID.")
+
         employee_info = None
         for employee in employee_data:
             if employee_id in employee:
@@ -37,8 +40,7 @@ class Attendance:
             full_name = employee_info.get("full_name")
             team = employee_info.get("team")
         else:
-            print("EmployeeID does not exist.")
-            return
+            raise ValueError("EmployeeID does not exist.")
         
         is_late = False
         if not is_late:

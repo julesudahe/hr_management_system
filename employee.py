@@ -35,17 +35,18 @@ class Employee:
         if level.lower() == "employee" or level.lower() == "manager" or level.lower() == "intern":
             if not department or not team:
                 raise ValueError("Department or team is required for Interns, Employees and Managers.")
-        
-        elif level.lower() == "intern":
+
+        if level.lower() == "intern":
             if not team or not isinstance(internship_duration, int) or not (3 <= internship_duration <= 6):
                 raise ValueError("Invalid input: Internship duration.")
-        
-        elif level.lower() == "director":
+            self.internship_duration = internship_duration
+        else:
+            self.internship_duration = None
+
+        if level.lower() == "director":
             if not department:
                 raise ValueError("Department is required for Directors.")
             team = None
-        else:
-            internship_duration = None # If not an intern, internship_duration should be None
         
         self._first_name = first_name
         self._last_name = last_name

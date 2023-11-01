@@ -15,15 +15,25 @@ class DataDeserializer:
         """Deserialize employee data from employees.json file."""
 
         if os.path.exists("1. employees.json"):
-            with open("1. employees.json", "r", encoding="utf-8") as json_file:
-                data = json.load(json_file)
-                return data
+            try:
+                with open("1. employees.json", "r", encoding="utf-8") as json_file:
+                    data = json.load(json_file)
+                    
+                    if isinstance(data, list):
+                        return data
+                    else:
+                        print("Invalid JSON format in employees.json")
+                        return []
+            except json.JSONDecodeError:
+                print("Invalid JSON syntax in employees.json")
+                return []
         else:
-            return {}
-
+            print("employees.json file not found")
+            return []
+    
     def deserialize_attendance_from_json(self):
-        """Deserialize attendance data from attendance.json file."""
-
+        """Deserialize salary data from attendance.json file."""
+        
         if os.path.exists("2. attendance.json"):
             with open("2. attendance.json", "r", encoding="utf-8") as json_file:
                 data = json.load(json_file)
