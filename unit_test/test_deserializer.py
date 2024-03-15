@@ -1,5 +1,3 @@
-"""AndrewID: judahemu & Juwizeyi"""
-
 import unittest
 from deserializer import DataDeserializer
 

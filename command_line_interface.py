@@ -1,5 +1,3 @@
-"""AndrewID: judahemu & Juwizeyi"""
-
 from HRMIS import EmployeeManagement
 
 def print_menu():

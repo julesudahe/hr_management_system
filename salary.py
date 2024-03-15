@@ -1,5 +1,3 @@
-"""AndrewID: judahemu & juwizeyi"""
-
 import json
 import datetime
 from deserializer import DataDeserializer

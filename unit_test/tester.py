@@ -1,5 +1,3 @@
-"""AndrewID: judahemu & Juwizeyi"""
-
 from HRMIS import EmployeeManagement
 
 record_attendance = EmployeeManagement()
